@@ -153,13 +153,27 @@
       border-radius: 2px;
       margin-bottom: 0.3rem;
       cursor: pointer;
-      overflow: hidden;
+      overflow: visible;
+      position: relative;
     }
     
     .progress-bar-fill {
       background: #1db954;
       height: 100%;
       width: 0%;
+    }
+    
+    .progress-thumb {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #1db954;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 0%;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(29, 185, 84, 0.6);
     }
     
     .time-info {
@@ -397,6 +411,7 @@
   <div class="progress">
     <div class="progress-bar" id="progressBar">
       <div class="progress-bar-fill" id="progressFill"></div>
+      <div class="progress-thumb" id="progressThumb"></div>
     </div>
     <div class="time-info">
       <span id="current">0:00</span>
@@ -679,6 +694,7 @@ function updateProgress() {
   if (!player.audio) return;
   const pct = (player.audio.currentTime / player.audio.duration) * 100 || 0;
   document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressThumb').style.left = pct + '%';
   document.getElementById('current').textContent = fmt(player.audio.currentTime);
   document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
 }
