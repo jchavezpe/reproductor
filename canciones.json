@@ -235,7 +235,7 @@
     {
       "id": 33,
       "title": "Alma herida",
-      "artist": "diomedes diaz",
+      "artist": "Diomedes diaz",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Alma%20Herida%20%28Diomedes%20Diaz%29.mp3"
     },
@@ -381,7 +381,7 @@
     },
     {
       "id": 54,
-      "title": "El hijo ausente",
+      "title": "El hijo  ausente",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20Hijo%20%20Ausente.mp3"
@@ -788,7 +788,7 @@
     {
       "id": 112,
       "title": "Amor de pobre",
-      "artist": "miltiño",
+      "artist": "Miltiño",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/amor%20de%20pobre----milti%C3%B1o.mp3"
     },
@@ -921,7 +921,7 @@
     {
       "id": 131,
       "title": "Flor de bulevart",
-      "artist": "el caballero gaucho",
+      "artist": "El caballero gaucho",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/flor%20de%20bulevart---el%20caballero%20gaucho.mp3"
     },
@@ -1025,15 +1025,15 @@
     },
     {
       "id": 146,
-      "title": "Mama vieja----los visconti",
-      "artist": "Desconocido",
+      "title": "Mama vieja",
+      "artist": "Los Visconti",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/mama%20vieja----los%20visconti.mp3"
     },
     {
       "id": 147,
       "title": "Mi hermano y yo",
-      "artist": "Desconocido",
+      "artist": "Hermanos Zuleta",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/mi%20hermano%20y%20yo.mp3"
     },
