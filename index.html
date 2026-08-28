@@ -443,8 +443,12 @@
 const player = {
   audio: null,
   audioCtx: null,
+  compressor: null,
   gain: null,
   analyser: null,
+  nextAudio: null,
+  nextIndex: -1,
+  gaplessLoaded: false,
   songs: [],
   current: 0,
   playing: false,
@@ -482,9 +486,21 @@ function initAudio() {
   try {
     player.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     player.gain = player.audioCtx.createGain();
+    player.compressor = player.audioCtx.createDynamicsCompressor();
     player.analyser = player.audioCtx.createAnalyser();
-    player.gain.connect(player.analyser);
+    
+    // Configurar el nivelador automático (Compresor)
+    player.compressor.threshold.value = -30;
+    player.compressor.knee.value = 40;
+    player.compressor.ratio.value = 12;
+    player.compressor.attack.value = 0.003;
+    player.compressor.release.value = 0.25;
+    
+    // Conectar la cadena de audio
+    player.gain.connect(player.compressor);
+    player.compressor.connect(player.analyser);
     player.analyser.connect(player.audioCtx.destination);
+    
     player.gain.gain.value = 0.8;
   } catch (e) {
     console.error('Audio context error:', e);
@@ -567,6 +583,14 @@ function loadTrack(i) {
   if (i < 0 || i >= songs.length) return;
   player.current = i;
   
+  // Limpiar pre-carga de gapless si se carga otra canción
+  if (player.nextAudio) {
+    player.nextAudio.pause();
+    player.nextAudio = null;
+  }
+  player.gaplessLoaded = false;
+  player.nextIndex = -1;
+  
   if (player.audio) player.audio.pause();
   
   const song = songs[i];
@@ -582,12 +606,30 @@ function loadTrack(i) {
   }
   
   player.audio.addEventListener('ended', () => {
-    const next = getNextIndex();
-    if (next >= 0) {
-      loadTrack(next);
-      play();
+    // 🔄 Si la siguiente canción ya está pre-cargada (gapless), usarla
+    if (player.gaplessLoaded && player.nextAudio && player.nextIndex >= 0) {
+      player.current = player.nextIndex;
+      player.audio = player.nextAudio;
+      player.nextAudio = null;
+      player.gaplessLoaded = false;
+      
+      // Re-conectar eventos al nuevo audio
+      player.audio.addEventListener('timeupdate', updateProgress);
+      player.audio.addEventListener('ended', arguments.callee);
+      
+      player.audio.play();
+      updateDisplay();
+      scrollToCurrentSong();
+      console.log('▶️ Siguiente canción reproduciendo (gapless)');
     } else {
-      pause();
+      // Fallback: cargar siguiente como antes
+      const next = getNextIndex();
+      if (next >= 0) {
+        loadTrack(next);
+        play();
+      } else {
+        pause();
+      }
     }
   });
   
@@ -697,6 +739,29 @@ function updateProgress() {
   document.getElementById('progressThumb').style.left = pct + '%';
   document.getElementById('current').textContent = fmt(player.audio.currentTime);
   document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
+  
+  // 🔄 GAPLESS PLAYBACK: Pre-cargar siguiente canción cuando faltan 0.5 segundos
+  const timeRemaining = player.audio.duration - player.audio.currentTime;
+  if (timeRemaining <= 0.5 && !player.gaplessLoaded && player.playing) {
+    const next = getNextIndex();
+    if (next >= 0) {
+      player.nextIndex = next;
+      player.nextAudio = new Audio();
+      player.nextAudio.crossOrigin = "anonymous";
+      player.nextAudio.src = player.filtered[next].url;
+      
+      // Conectar al audio context
+      if (player.audioCtx) {
+        try {
+          const src = player.audioCtx.createMediaElementAudioSource(player.nextAudio);
+          src.connect(player.gain);
+        } catch (e) {}
+      }
+      
+      player.gaplessLoaded = true;
+      console.log('🔄 Siguiente canción pre-cargada (gapless)');
+    }
+  }
 }
 
 function fmt(s) {
