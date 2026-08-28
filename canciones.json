@@ -16,13 +16,6 @@
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20El%20Indio%20-%20Pastor%20Lopez.mp3"
     },
     {
-      "id": 2,
-      "title": "La venia bendita",
-      "artist": "Marco antonio solis",
-      "duration": 240,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20La%20Venia%20Bendita%20-%20Marco%20Antonio%20Solis.mp3"
-    },
-    {
       "id": 3,
       "title": "Lindo clavelito",
       "artist": "Rodolfo aicardi con los hispanos",
@@ -128,6 +121,13 @@
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kP32F3F3Fgw.mp3"
     },
     {
+      "id": 2,
+      "title": "La venia bendita",
+      "artist": "Marco antonio solis",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20La%20Venia%20Bendita%20-%20Marco%20Antonio%20Solis.mp3"
+    },
+    {
       "id": 18,
       "title": "Jose miguel class quiereme en vida",
       "artist": "Desconocido",
@@ -143,15 +143,15 @@
     },
     {
       "id": 20,
-      "title": "Nelson henriquez el pergamino audio",
-      "artist": "Desconocido",
+      "title": "El pergamino audio",
+      "artist": "Nelson henriquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Nelson_henriquez_el_pergamino_audio_oNdCW144aj4.mp3"
     },
     {
       "id": 21,
-      "title": "Querido",
-      "artist": "Cascarrabias - alci acosta",
+      "title": "Querido Cascarrabias",
+      "artist": "Alci Acosta",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Querido%20-%20Cascarrabias%20-%20Alci%20Acosta.mp3"
     },
@@ -164,8 +164,8 @@
     },
     {
       "id": 23,
-      "title": "Recuerdos del festival pastor lopez 1973",
-      "artist": "Desconocido",
+      "title": "Recuerdos del Festival",
+      "artist": "Pastor Lopez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Recuerdos_del_festival_pastor_lopez_1973wmv_ie5Oy6alNxA.mp3"
     },
@@ -178,21 +178,21 @@
     },
     {
       "id": 25,
-      "title": "Los corraleros de majagual culebra cascabel",
-      "artist": "Desconocido",
+      "title": "Culebra cascabel",
+      "artist": "Los corraleros de majagual",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20los_corraleros_de_majagual_culebra_cascabel.mp3"
     },
     {
       "id": 26,
-      "title": "Victor piero los melodicos rosa",
-      "artist": "Desconocido",
+      "title": "Rosa",
+      "artist": "Victor Piñero & Los Melodicos",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20victor_piero_los_melodicos_rosa.mp3"
     },
     {
       "id": 27,
-      "title": "La carta numero 3",
+      "title": "La Carta numero 3",
       "artist": "Alfredo gutierrez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/01%20La%20Carta%20Numero%203%20-%20Alfredo%20Gutierrez.mp3"
