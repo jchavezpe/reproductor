@@ -745,7 +745,7 @@ function updateProgress() {
   
   // 🔄 CROSSFADE: Cuando falten 0.5s, INICIAR la siguiente (ambas suenan juntas)
   const timeRemaining = player.audio.duration - player.audio.currentTime;
-  if (timeRemaining <= 0.5 && !player.gaplessLoaded && player.playing) {
+  if (timeRemaining <= 1.5 && !player.gaplessLoaded && player.playing) {
     const next = getNextIndex();
     if (next >= 0) {
       player.nextIndex = next;
