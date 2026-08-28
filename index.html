@@ -95,10 +95,10 @@
     .now-playing {
       background: rgba(29, 185, 84, 0.08);
       border-bottom: 1px solid rgba(29, 185, 84, 0.2);
-      padding: 0.4rem 0.8rem;
+      padding: 0.5rem 0.8rem;
       text-align: center;
       flex-shrink: 0;
-      height: 80px;
+      height: 90px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -106,12 +106,12 @@
     
     #viz {
       width: 100%;
-      height: 20px;
+      height: 28px;
       opacity: 0.8;
     }
     
     .now-playing h2 {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: 700;
       margin: 0;
       white-space: nowrap;
@@ -121,7 +121,7 @@
     }
     
     .now-playing p {
-      font-size: 13px;
+      font-size: 18px;
       color: #999;
       margin: 0;
       white-space: nowrap;
@@ -131,10 +131,10 @@
     }
     
     .song-time {
-      font-size: 10px;
+      font-size: 11px;
       color: #1db954;
       font-weight: 700;
-      margin-top: 0.1rem;
+      margin-top: 0.2rem;
     }
     
     .progress {
@@ -205,6 +205,7 @@
     .song-item.playing {
       background: rgba(29, 185, 84, 0.2);
       border-left-color: #1db954;
+      scroll-margin-top: 1rem;
     }
     
     .song-info {
@@ -219,19 +220,26 @@
       color: #fff;
       line-height: 1.1;
       overflow: hidden;
-      white-space: nowrap;
-      position: relative;
     }
     
-    .song-title-text {
+    .song-title-inner {
       display: inline-block;
-      padding-right: 2rem;
-      animation: marquee-left 20s linear infinite;
+      white-space: nowrap;
+      padding-right: 1rem;
+      animation: scroll 15s linear infinite;
     }
     
-    .song-title:hover .song-title-text,
-    .song-item.playing .song-title-text {
-      animation: marquee-left 20s linear infinite;
+    .song-title.scrollable .song-title-inner {
+      animation: scroll 15s linear infinite;
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
     
     .song-artist {
@@ -240,28 +248,17 @@
       margin-top: 0.2rem;
       line-height: 1.1;
       overflow: hidden;
-      white-space: nowrap;
-      position: relative;
     }
     
-    .song-artist-text {
+    .song-artist-inner {
       display: inline-block;
-      padding-right: 2rem;
-      animation: marquee-left 20s linear infinite;
+      white-space: nowrap;
+      padding-right: 1rem;
+      animation: scroll 15s linear infinite;
     }
     
-    .song-artist:hover .song-artist-text,
-    .song-item.playing .song-artist-text {
-      animation: marquee-left 20s linear infinite;
-    }
-    
-    @keyframes marquee-left {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    .song-artist.scrollable .song-artist-inner {
+      animation: scroll 15s linear infinite;
     }
     
     .song-duration {
@@ -389,7 +386,7 @@
   </div>
   
   <div class="now-playing">
-    <canvas id="viz" width="360" height="20"></canvas>
+    <canvas id="viz" width="360" height="28"></canvas>
     <div>
       <h2 id="title">Cargando...</h2>
       <p id="artist">Conectando</p>
@@ -593,28 +590,24 @@ function loadTrack(i) {
 }
 
 function scrollToCurrentSong() {
-  requestAnimationFrame(() => {
-    const playlistContainer = document.getElementById('playlist');
-    const playingItem = document.querySelector('.song-item.playing');
-    
-    if (playingItem && playlistContainer) {
-      console.log('🔄 Scroll a canción actual...');
-      const itemTop = playingItem.offsetTop;
-      const itemHeight = playingItem.offsetHeight;
-      const containerHeight = playlistContainer.clientHeight;
-      const currentScroll = playlistContainer.scrollTop;
-      
-      // Calcular posición para centrar
-      const targetScroll = itemTop - (containerHeight / 2) + (itemHeight / 2);
-      
-      playlistContainer.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth'
-      });
-      
-      console.log(`✅ Scroll completado a posición ${targetScroll}`);
+  setTimeout(() => {
+    const playing = document.querySelector('.song-item.playing');
+    if (playing) {
+      playing.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-  });
+  }, 100);
+}
+
+function checkIfNeedsScroll(text, maxWidth = 300) {
+  const tempEl = document.createElement('div');
+  tempEl.style.position = 'absolute';
+  tempEl.style.whiteSpace = 'nowrap';
+  tempEl.style.font = '40px -apple-system, BlinkMacSystemFont';
+  tempEl.textContent = text;
+  document.body.appendChild(tempEl);
+  const width = tempEl.offsetWidth;
+  document.body.removeChild(tempEl);
+  return width > maxWidth;
 }
 
 function updateDisplay() {
@@ -627,6 +620,22 @@ function updateDisplay() {
   
   titleEl.textContent = s.title;
   artistEl.textContent = s.artist;
+  
+  if (checkIfNeedsScroll(s.title, 280)) {
+    titleEl.classList.add('scrollable');
+    titleEl.innerHTML = `<span class="song-title-inner">${s.title}</span>`;
+  } else {
+    titleEl.classList.remove('scrollable');
+    titleEl.textContent = s.title;
+  }
+  
+  if (checkIfNeedsScroll(s.artist, 280)) {
+    artistEl.classList.add('scrollable');
+    artistEl.innerHTML = `<span class="song-artist-inner">${s.artist}</span>`;
+  } else {
+    artistEl.classList.remove('scrollable');
+    artistEl.textContent = s.artist;
+  }
   
   document.getElementById('duration').textContent = fmt(s.duration);
   
@@ -641,12 +650,8 @@ function updateList() {
   const html = songs.map((s, i) => `
     <div class="song-item ${i === player.current ? 'playing' : ''}" onclick="loadAndPlay(${i})">
       <div class="song-info">
-        <div class="song-title">
-          <span class="song-title-text">${s.title}</span>
-        </div>
-        <div class="song-artist">
-          <span class="song-artist-text">${s.artist}</span>
-        </div>
+        <div class="song-title">${s.title}</div>
+        <div class="song-artist">${s.artist}</div>
       </div>
       <div style="display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;">
         <div class="song-duration">${fmt(s.duration)}</div>
