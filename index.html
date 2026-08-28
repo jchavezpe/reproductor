@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎵 Reproductor Clásico - Mis 159 Canciones</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.119.0/tabler-icons.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>🎵 Reproductor Clásico</title>
   <style>
     * {
       margin: 0;
@@ -24,67 +23,76 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
+      max-width: 100%;
     }
     
     .navbar {
       background: rgba(0,0,0,0.4);
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-shrink: 0;
     }
     
-    .navbar h1 {
-      font-size: 16px;
-      margin: 0.25rem 0 0;
+    .navbar-title {
+      min-width: 0;
     }
     
     .navbar-label {
-      font-size: 12px;
+      font-size: 11px;
       color: #1db954;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar h1 {
+      font-size: 14px;
+      margin: 0.25rem 0 0;
+      font-weight: 700;
     }
     
     .button-group {
       display: flex;
       gap: 0.5rem;
+      flex-shrink: 0;
     }
     
     button {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
       color: #fff;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 16px;
       transition: all 0.2s;
+      flex-shrink: 0;
     }
     
-    button:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: rgba(255,255,255,0.3);
+    button:active {
+      background: rgba(255,255,255,0.2);
     }
     
     .search-bar {
-      padding: 1rem;
+      padding: 0.75rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-shrink: 0;
     }
     
     input[type="text"] {
       width: 100%;
-      padding: 0.75rem 1rem;
+      padding: 0.6rem 1rem;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 24px;
+      border-radius: 20px;
       color: #fff;
-      font-size: 14px;
+      font-size: 13px;
       outline: none;
     }
     
@@ -93,29 +101,32 @@
     }
     
     .now-playing {
-      padding: 1.5rem;
+      padding: 1rem;
       background: rgba(29, 185, 84, 0.05);
       border-bottom: 1px solid rgba(29, 185, 84, 0.2);
       text-align: center;
+      flex-shrink: 0;
     }
     
     #visualizer {
       width: 100%;
-      height: 80px;
-      margin-bottom: 1rem;
+      height: 60px;
+      margin-bottom: 0.75rem;
       opacity: 0.8;
     }
     
     .now-playing h2 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       margin: 0;
+      word-break: break-word;
     }
     
     .now-playing p {
-      font-size: 13px;
+      font-size: 12px;
       color: #b3b3b3;
-      margin: 0.5rem 0 0;
+      margin: 0.25rem 0 0;
+      word-break: break-word;
     }
     
     .now-playing-actions {
@@ -123,34 +134,36 @@
       display: flex;
       justify-content: center;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
     
     .btn-small {
       background: rgba(29, 185, 84, 0.2);
       border: 1px solid #1db954;
       color: #1db954;
-      padding: 0.4rem 0.8rem;
-      border-radius: 16px;
-      font-size: 12px;
+      padding: 0.35rem 0.7rem;
+      border-radius: 14px;
+      font-size: 11px;
       cursor: pointer;
       transition: all 0.2s;
     }
     
-    .btn-small:hover {
+    .btn-small:active {
       background: rgba(29, 185, 84, 0.3);
     }
     
     .progress-section {
-      padding: 0.75rem 1rem;
+      padding: 0.6rem 0.75rem;
       background: rgba(0,0,0,0.2);
+      flex-shrink: 0;
     }
     
     .progress-bar-container {
       background: rgba(255,255,255,0.1);
-      height: 4px;
+      height: 3px;
       border-radius: 2px;
       overflow: hidden;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       cursor: pointer;
     }
     
@@ -164,42 +177,43 @@
     .time-display {
       display: flex;
       justify-content: space-between;
-      font-size: 11px;
+      font-size: 10px;
       color: #b3b3b3;
     }
     
     .playlist-section {
       flex: 1;
       overflow-y: auto;
-      padding: 1rem;
+      padding: 0.75rem;
+      min-height: 0;
     }
     
     .playlist-count {
-      font-size: 12px;
+      font-size: 11px;
       color: #1db954;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
       font-weight: 600;
     }
     
     .playlist-list {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
     
     .playlist-item {
-      padding: 0.75rem;
+      padding: 0.6rem;
       background: rgba(255,255,255,0.05);
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: background 0.2s;
-      font-size: 12px;
+      font-size: 11px;
       border-left: 3px solid transparent;
     }
     
-    .playlist-item:hover {
+    .playlist-item:active {
       background: rgba(255,255,255,0.1);
     }
     
@@ -211,32 +225,36 @@
     .song-title {
       color: #fff;
       font-weight: 500;
+      word-break: break-word;
     }
     
     .song-artist {
-      font-size: 11px;
+      font-size: 10px;
       color: #888;
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
     }
     
     .song-meta {
       text-align: right;
       margin-left: 0.5rem;
+      flex-shrink: 0;
     }
     
     .song-duration {
       color: #1db954;
       font-weight: 600;
-      font-size: 11px;
+      font-size: 10px;
     }
     
     .controls {
       background: rgba(0,0,0,0.6);
       border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 1rem;
+      padding: 0.75rem;
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
       flex-wrap: wrap;
     }
     
@@ -244,31 +262,32 @@
       background: #1db954;
       border: none;
       color: #000;
-      width: 56px;
-      height: 56px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       transition: all 0.2s;
       box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
+      flex-shrink: 0;
     }
     
-    .btn-play:hover {
-      box-shadow: 0 6px 16px rgba(29, 185, 84, 0.6);
-      transform: scale(1.05);
+    .btn-play:active {
+      transform: scale(0.95);
     }
     
     .volume-panel {
       background: rgba(0,0,0,0.4);
       border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 1rem;
+      padding: 0.75rem;
       display: none;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      flex-shrink: 0;
     }
     
     .volume-panel.show {
@@ -278,12 +297,17 @@
     .volume-control {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
+    }
+    
+    .volume-control label {
+      font-size: 11px;
+      white-space: nowrap;
     }
     
     input[type="range"] {
       flex: 1;
-      height: 4px;
+      height: 3px;
       border-radius: 2px;
       background: rgba(255,255,255,0.2);
       outline: none;
@@ -294,22 +318,20 @@
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: #1db954;
       cursor: pointer;
-      box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.3);
     }
     
     input[type="range"]::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: #1db954;
       cursor: pointer;
       border: none;
-      box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.3);
     }
     
     .loading {
@@ -318,13 +340,13 @@
       justify-content: center;
       gap: 0.5rem;
       color: #1db954;
-      font-size: 14px;
+      font-size: 12px;
     }
     
     .spinner {
       display: inline-block;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border: 2px solid rgba(29, 185, 84, 0.3);
       border-top-color: #1db954;
       border-radius: 50%;
@@ -334,6 +356,20 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+
+    /* Scrollbar personalizado */
+    .playlist-section::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .playlist-section::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .playlist-section::-webkit-scrollbar-thumb {
+      background: rgba(29, 185, 84, 0.3);
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -342,35 +378,29 @@
   
   <!-- Navbar -->
   <div class="navbar">
-    <div>
+    <div class="navbar-title">
       <div class="navbar-label">🎵 CLASICOS</div>
       <h1>Mi Reproductor</h1>
     </div>
     <div class="button-group">
-      <button id="btn-favorites-toggle" title="Favoritos">
-        <i class="ti ti-heart"></i>
-      </button>
-      <button id="btn-settings" title="Configuración">
-        <i class="ti ti-settings"></i>
-      </button>
+      <button id="btn-favorites-toggle" title="Favoritos">❤️</button>
+      <button id="btn-settings" title="Configuración">⚙️</button>
     </div>
   </div>
   
   <!-- Search -->
   <div class="search-bar">
-    <input type="text" id="search-input" placeholder="Buscar canción o artista...">
+    <input type="text" id="search-input" placeholder="Buscar canción...">
   </div>
   
   <!-- Now Playing -->
   <div class="now-playing">
-    <canvas id="visualizer" width="360" height="100"></canvas>
-    <h2 id="song-title">Cargando canciones...</h2>
+    <canvas id="visualizer" width="360" height="60"></canvas>
+    <h2 id="song-title">Cargando...</h2>
     <p id="song-artist">Conectando a GitHub...</p>
     <div class="now-playing-actions">
-      <button id="btn-add-favorite" class="btn-small">
-        <i class="ti ti-heart" style="font-size: 12px; vertical-align: -1px; margin-right: 4px;"></i>Agregar
-      </button>
-      <span id="song-duration" style="font-size: 12px; color: #888; padding: 0.4rem 0.8rem;">0:00</span>
+      <button id="btn-add-favorite" class="btn-small">❤️ Agregar</button>
+      <span id="song-duration" style="font-size: 11px; color: #888; padding: 0.35rem 0.7rem;">0:00</span>
     </div>
   </div>
   
@@ -390,7 +420,7 @@
     <div class="playlist-count">
       <div class="loading">
         <span class="spinner"></span>
-        Cargando canciones...
+        Cargando...
       </div>
     </div>
     <div class="playlist-list" id="queue-list"></div>
@@ -398,36 +428,19 @@
   
   <!-- Controls -->
   <div class="controls">
-    <button id="btn-shuffle" title="Mezclar">
-      <i class="ti ti-shuffle"></i>
-    </button>
-    <button id="btn-prev" title="Anterior">
-      <i class="ti ti-player-skip-back"></i>
-    </button>
-    <button id="btn-play" class="btn-play" title="Reproducir">
-      <i class="ti ti-player-play"></i>
-    </button>
-    <button id="btn-next" title="Siguiente">
-      <i class="ti ti-player-skip-forward"></i>
-    </button>
-    <button id="btn-repeat" title="Repetir">
-      <i class="ti ti-repeat"></i>
-    </button>
+    <button id="btn-shuffle" title="Mezclar">🔀</button>
+    <button id="btn-prev" title="Anterior">⏮️</button>
+    <button id="btn-play" class="btn-play" title="Reproducir">▶️</button>
+    <button id="btn-next" title="Siguiente">⏭️</button>
+    <button id="btn-repeat" title="Repetir">🔁</button>
   </div>
   
   <!-- Volume Panel -->
   <div id="volume-panel" class="volume-panel">
     <div class="volume-control">
-      <i class="ti ti-volume-2" style="font-size: 16px; color: #1db954;"></i>
+      <span>🔊</span>
       <input type="range" id="volume-slider" min="0" max="100" value="80">
-      <span id="volume-value" style="font-size: 12px; min-width: 30px;">80%</span>
-    </div>
-    <div class="volume-control">
-      <i class="ti ti-equalizercircle" style="font-size: 16px; color: #1db954;"></i>
-      <label style="font-size: 12px;">
-        <input type="checkbox" id="normalize-toggle" checked style="margin-right: 0.5rem;">
-        Normalización de audio
-      </label>
+      <span id="volume-value" style="font-size: 11px; min-width: 25px;">80%</span>
     </div>
   </div>
 
@@ -443,33 +456,35 @@ const player = {
   songs: [],
   currentIndex: 0,
   isPlaying: false,
-  isShuffle: false,
   repeatMode: 0,
   favorites: new Set(),
   showFavoritesOnly: false,
   filteredSongs: []
 };
 
-// URL de tu JSON en GitHub
 const GITHUB_JSON_URL = "https://raw.githubusercontent.com/jchavezpe/reproductor/main/canciones.json";
 
 function initAudioContext() {
   if (!player.audioContext) {
-    player.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    player.gainNode = player.audioContext.createGain();
-    player.compressor = player.audioContext.createDynamicsCompressor();
-    player.analyser = player.audioContext.createAnalyser();
-    
-    player.compressor.threshold.value = -24;
-    player.compressor.knee.value = 30;
-    player.compressor.ratio.value = 12;
-    player.compressor.attack.value = 0.003;
-    player.compressor.release.value = 0.25;
-    
-    player.compressor.connect(player.gainNode);
-    player.gainNode.connect(player.analyser);
-    player.analyser.connect(player.audioContext.destination);
-    player.analyser.fftSize = 256;
+    try {
+      player.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      player.gainNode = player.audioContext.createGain();
+      player.compressor = player.audioContext.createDynamicsCompressor();
+      player.analyser = player.audioContext.createAnalyser();
+      
+      player.compressor.threshold.value = -24;
+      player.compressor.knee.value = 30;
+      player.compressor.ratio.value = 12;
+      player.compressor.attack.value = 0.003;
+      player.compressor.release.value = 0.25;
+      
+      player.compressor.connect(player.gainNode);
+      player.gainNode.connect(player.analyser);
+      player.analyser.connect(player.audioContext.destination);
+      player.analyser.fftSize = 256;
+    } catch (e) {
+      console.error('Error init audio:', e);
+    }
   }
   loadFavorites();
 }
@@ -485,14 +500,29 @@ function saveFavorites() {
   localStorage.setItem('spotify-favorites', JSON.stringify([...player.favorites]));
 }
 
-// Cargar canciones desde GitHub
+// CORS FIX para Google Drive
+function getCORSFriendlyUrl(driveUrl) {
+  if (!driveUrl) return driveUrl;
+  // Convertir URL de Drive a versión CORS-friendly
+  if (driveUrl.includes('drive.google.com')) {
+    const match = driveUrl.match(/id=([a-zA-Z0-9-_]+)/);
+    if (match) {
+      return `https://drive.google.com/uc?id=${match[1]}&export=download`;
+    }
+  }
+  return driveUrl;
+}
+
 async function loadSongsFromGitHub() {
   try {
     const response = await fetch(GITHUB_JSON_URL);
     if (!response.ok) throw new Error('Error loading JSON');
     
     const data = await response.json();
-    player.songs = data.canciones || [];
+    player.songs = (data.canciones || []).map(song => ({
+      ...song,
+      url: getCORSFriendlyUrl(song.url)
+    }));
     player.filteredSongs = [...player.songs];
     
     console.log(`✅ Cargadas ${player.songs.length} canciones`);
@@ -503,8 +533,8 @@ async function loadSongsFromGitHub() {
     }
   } catch (error) {
     console.error('Error loading songs:', error);
-    document.getElementById('song-title').textContent = 'Error al cargar canciones';
-    document.getElementById('song-artist').textContent = 'Verifica tu conexión a internet';
+    document.getElementById('song-title').textContent = 'Error al cargar';
+    document.getElementById('song-artist').textContent = 'Verifica tu conexión';
   }
 }
 
@@ -516,7 +546,9 @@ function createAudio(url) {
   try {
     const source = player.audioContext.createMediaElementAudioSource(audio);
     source.connect(player.compressor);
-  } catch (e) {}
+  } catch (e) {
+    console.error('Error creating audio source:', e);
+  }
   
   return audio;
 }
@@ -552,7 +584,10 @@ function loadSong(index) {
   if (index < 0 || index >= songs.length) return;
   player.currentIndex = index;
   
-  if (player.audio) player.audio.pause();
+  if (player.audio) {
+    player.audio.pause();
+    player.audio = null;
+  }
   
   const song = songs[index];
   player.audio = createAudio(song.url);
@@ -574,16 +609,14 @@ function updateDisplay() {
   
   const isFavorite = player.favorites.has(song.url);
   const btn = document.getElementById('btn-add-favorite');
-  btn.style.background = isFavorite ? 'rgba(237, 34, 93, 0.3)' : 'rgba(29, 185, 84, 0.2)';
-  btn.style.borderColor = isFavorite ? '#ed225d' : '#1db954';
-  btn.style.color = isFavorite ? '#ed225d' : '#1db954';
+  btn.textContent = isFavorite ? '💔 Agregado' : '❤️ Agregar';
   
   updateQueueList();
 }
 
 function updateQueueList() {
   const songs = player.showFavoritesOnly ? player.filteredSongs : player.songs;
-  document.querySelector('.playlist-count').textContent = `${songs.length} canciones`;
+  document.querySelector('.playlist-count').innerHTML = `${songs.length} canciones`;
   
   const queueList = document.getElementById('queue-list');
   queueList.innerHTML = songs.map((song, i) => {
@@ -591,15 +624,15 @@ function updateQueueList() {
     const isFav = player.favorites.has(song.url);
     return `
       <div onclick="loadAndPlay(${i})" class="playlist-item ${isCurrent ? 'current' : ''}">
-        <div style="display: flex; justify-content: space-between; align-items: start;">
-          <div style="flex: 1;">
+        <div style="display: flex; gap: 0.5rem;">
+          <div style="flex: 1; min-width: 0;">
             <div class="song-title">${song.title}</div>
             <div class="song-artist">${song.artist}</div>
           </div>
           <div class="song-meta">
             <div class="song-duration">${song.duration ? formatTime(song.duration) : '-'}</div>
-            <button onclick="event.stopPropagation(); toggleFavorite('${song.url}', event)" style="background: none; border: none; color: ${isFav ? '#ed225d' : '#888'}; cursor: pointer; font-size: 12px; padding: 0;">
-              <i class="ti ti-heart${isFav ? '-filled' : ''}"></i>
+            <button onclick="event.stopPropagation(); toggleFavorite('${song.url}', event)" style="background: none; border: none; cursor: pointer; font-size: 11px; padding: 0; color: ${isFav ? '#ed225d' : '#888'};">
+              ${isFav ? '💔' : '🤍'}
             </button>
           </div>
         </div>
@@ -621,7 +654,7 @@ function toggleFavorite(url, event) {
 
 function updateProgress() {
   if (!player.audio) return;
-  const progress = (player.audio.currentTime / player.audio.duration) * 100;
+  const progress = (player.audio.currentTime / player.audio.duration) * 100 || 0;
   document.getElementById('progress-bar').style.width = progress + '%';
   document.getElementById('time-current').textContent = formatTime(player.audio.currentTime);
   document.getElementById('time-remaining').textContent = '-' + formatTime(player.audio.duration - player.audio.currentTime);
@@ -642,16 +675,18 @@ function formatTime(s) {
 function playSong() {
   initAudioContext();
   if (!player.audio) loadSong(player.currentIndex);
-  player.audio.play();
-  player.isPlaying = true;
-  document.getElementById('btn-play').innerHTML = '<i class="ti ti-player-pause"></i>';
-  drawVisualizer();
+  if (player.audio) {
+    player.audio.play().catch(e => console.error('Play error:', e));
+    player.isPlaying = true;
+    document.getElementById('btn-play').textContent = '⏸️';
+    drawVisualizer();
+  }
 }
 
 function pauseSong() {
   if (player.audio) player.audio.pause();
   player.isPlaying = false;
-  document.getElementById('btn-play').innerHTML = '<i class="ti ti-player-play"></i>';
+  document.getElementById('btn-play').textContent = '▶️';
 }
 
 function togglePlay() {
@@ -684,29 +719,17 @@ function loadAndPlay(idx) {
   playSong();
 }
 
-function toggleShuffle() {
-  player.isShuffle = !player.isShuffle;
-  const btn = document.getElementById('btn-shuffle');
-  btn.style.background = player.isShuffle ? 'rgba(29, 185, 84, 0.3)' : 'rgba(255,255,255,0.1)';
-  btn.style.borderColor = player.isShuffle ? '#1db954' : 'rgba(255,255,255,0.2)';
-}
-
 function toggleRepeat() {
   player.repeatMode = (player.repeatMode + 1) % 3;
   const btn = document.getElementById('btn-repeat');
-  const icons = ['<i class="ti ti-repeat"></i>', 
-                 '<i class="ti ti-repeat-2"></i>',
-                 '<i class="ti ti-repeat-once"></i>'];
-  btn.innerHTML = icons[player.repeatMode];
-  btn.style.background = player.repeatMode ? 'rgba(29, 185, 84, 0.3)' : 'rgba(255,255,255,0.1)';
-  btn.style.borderColor = player.repeatMode ? '#1db954' : 'rgba(255,255,255,0.2)';
+  const emojis = ['🔁', '🔂', '🔃'];
+  btn.textContent = emojis[player.repeatMode];
 }
 
 // Event Listeners
 document.getElementById('btn-play').addEventListener('click', togglePlay);
 document.getElementById('btn-next').addEventListener('click', nextSong);
 document.getElementById('btn-prev').addEventListener('click', prevSong);
-document.getElementById('btn-shuffle').addEventListener('click', toggleShuffle);
 document.getElementById('btn-repeat').addEventListener('click', toggleRepeat);
 
 document.getElementById('search-input').addEventListener('input', (e) => {
@@ -715,8 +738,8 @@ document.getElementById('search-input').addEventListener('input', (e) => {
     player.filteredSongs = [...player.songs];
   } else {
     player.filteredSongs = player.songs.filter(s => 
-      s.title.toLowerCase().includes(query) || 
-      s.artist.toLowerCase().includes(query)
+      (s.title || '').toLowerCase().includes(query) || 
+      (s.artist || '').toLowerCase().includes(query)
     );
   }
   player.currentIndex = 0;
@@ -744,8 +767,7 @@ document.getElementById('volume-slider').addEventListener('input', (e) => {
 });
 
 document.getElementById('btn-settings').addEventListener('click', () => {
-  const panel = document.getElementById('volume-panel');
-  panel.classList.toggle('show');
+  document.getElementById('volume-panel').classList.toggle('show');
 });
 
 document.getElementById('progress-container').addEventListener('click', (e) => {
@@ -769,7 +791,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Cargar canciones al iniciar
+// Load on startup
 window.addEventListener('load', () => {
   initAudioContext();
   loadSongsFromGitHub();
