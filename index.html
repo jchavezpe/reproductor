@@ -27,7 +27,6 @@
       height: 100%;
     }
     
-    /* NAVBAR - 48px */
     .navbar {
       background: rgba(0,0,0,0.5);
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -40,14 +39,16 @@
     }
     
     .navbar-title h1 {
-      font-size: 14px;
+      font-size: 15px;
       margin: 0;
+      font-weight: 700;
     }
     
     .navbar-label {
       font-size: 9px;
       color: #1db954;
       font-weight: 700;
+      letter-spacing: 0.5px;
     }
     
     .btn-icon {
@@ -62,19 +63,20 @@
       align-items: center;
       justify-content: center;
       font-size: 14px;
+      flex-shrink: 0;
     }
     
     .btn-icon:active {
       opacity: 0.7;
     }
     
-    /* SEARCH - 40px */
     .search-bar {
       padding: 0.5rem;
       flex-shrink: 0;
       height: 40px;
       display: flex;
       align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     
     .search-bar input {
@@ -92,7 +94,6 @@
       color: rgba(255,255,255,0.4);
     }
     
-    /* NOW PLAYING - 100px */
     .now-playing {
       background: rgba(29, 185, 84, 0.08);
       border-bottom: 1px solid rgba(29, 185, 84, 0.2);
@@ -105,14 +106,14 @@
       justify-content: space-between;
     }
     
-    #visualizer {
+    #viz {
       width: 100%;
       height: 40px;
       opacity: 0.8;
     }
     
     .now-playing h2 {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
       margin: 0;
       white-space: nowrap;
@@ -122,7 +123,7 @@
     }
     
     .now-playing p {
-      font-size: 11px;
+      font-size: 13px;
       color: #999;
       margin: 0;
       white-space: nowrap;
@@ -131,12 +132,12 @@
     }
     
     .song-time {
-      font-size: 11px;
-      color: #888;
+      font-size: 12px;
+      color: #1db954;
+      font-weight: 700;
       margin-top: 0.2rem;
     }
     
-    /* PROGRESS - 40px */
     .progress {
       padding: 0.5rem;
       flex-shrink: 0;
@@ -144,6 +145,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     
     .progress-bar {
@@ -164,38 +166,37 @@
     .time-info {
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
+      font-size: 11px;
       color: #888;
     }
     
-    /* PLAYLIST - FLEX */
     .playlist {
       flex: 1;
       overflow-y: auto;
-      padding: 0.6rem;
+      padding: 0.8rem;
       min-height: 0;
     }
     
     .playlist-title {
-      font-size: 10px;
+      font-size: 11px;
       color: #1db954;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       letter-spacing: 0.5px;
     }
     
     .song-item {
-      padding: 0.6rem;
+      padding: 0.8rem;
       background: rgba(255,255,255,0.05);
-      border-radius: 6px;
-      margin-bottom: 0.4rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-left: 3px solid transparent;
-      font-size: 12px;
+      transition: background 0.2s;
     }
     
     .song-item:active {
@@ -213,31 +214,31 @@
     }
     
     .song-title {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: #fff;
     }
     
     .song-artist {
-      font-size: 11px;
-      color: #888;
-      margin-top: 0.2rem;
+      font-size: 12px;
+      color: #999;
+      margin-top: 0.3rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     
     .song-duration {
-      font-size: 10px;
+      font-size: 11px;
       color: #1db954;
       font-weight: 700;
-      margin-left: 0.5rem;
+      margin-left: 0.8rem;
       flex-shrink: 0;
     }
     
-    /* CONTROLS - 52px */
     .controls {
       background: rgba(0,0,0,0.6);
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -264,6 +265,7 @@
       justify-content: center;
       font-size: 16px;
       flex-shrink: 0;
+      transition: background 0.2s;
     }
     
     .btn-control:active {
@@ -278,7 +280,6 @@
       box-shadow: 0 2px 8px rgba(29, 185, 84, 0.4);
     }
     
-    /* VOLUME PANEL */
     .volume-panel {
       background: rgba(0,0,0,0.5);
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -352,7 +353,7 @@
   </div>
   
   <div class="search-bar">
-    <input type="text" id="search" placeholder="Buscar...">
+    <input type="text" id="search" placeholder="Buscar canción...">
   </div>
   
   <div class="now-playing">
@@ -414,6 +415,7 @@ const JSON_URL = "https://raw.githubusercontent.com/jchavezpe/reproductor/main/c
 async function init() {
   try {
     const res = await fetch(JSON_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     player.songs = data.canciones || [];
     player.filtered = [...player.songs];
@@ -423,17 +425,22 @@ async function init() {
   } catch (e) {
     console.error('Error:', e);
     document.getElementById('title').textContent = 'Error cargando';
+    document.getElementById('artist').textContent = 'Verifica tu conexión';
   }
 }
 
 function initAudio() {
   if (player.audioCtx) return;
-  player.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  player.gain = player.audioCtx.createGain();
-  player.analyser = player.audioCtx.createAnalyser();
-  player.gain.connect(player.analyser);
-  player.analyser.connect(player.audioCtx.destination);
-  player.gain.gain.value = 0.8;
+  try {
+    player.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    player.gain = player.audioCtx.createGain();
+    player.analyser = player.audioCtx.createAnalyser();
+    player.gain.connect(player.analyser);
+    player.analyser.connect(player.audioCtx.destination);
+    player.gain.gain.value = 0.8;
+  } catch (e) {
+    console.error('Audio context error:', e);
+  }
 }
 
 function loadFav() {
@@ -478,6 +485,11 @@ function loadTrack(i) {
     document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
   });
   
+  player.audio.addEventListener('error', (e) => {
+    console.error('Audio error:', e);
+    document.getElementById('title').textContent = 'Error cargando audio';
+  });
+  
   updateDisplay();
 }
 
@@ -504,9 +516,9 @@ function updateList() {
         <div class="song-title">${s.title}</div>
         <div class="song-artist">${s.artist}</div>
       </div>
-      <div style="display: flex; align-items: center; gap: 0.4rem;">
+      <div style="display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;">
         <div class="song-duration">${fmt(s.duration)}</div>
-        <button onclick="event.stopPropagation(); toggleFav('${s.url}')" style="background: none; border: none; color: ${player.favorites.has(s.url) ? '#ed225d' : '#888'}; font-size: 12px; cursor: pointer; padding: 0;">
+        <button onclick="event.stopPropagation(); toggleFav('${s.url}')" style="background: none; border: none; color: ${player.favorites.has(s.url) ? '#ed225d' : '#888'}; font-size: 13px; cursor: pointer; padding: 0; width: auto;">
           ${player.favorites.has(s.url) ? '💔' : '🤍'}
         </button>
       </div>
@@ -582,20 +594,28 @@ function loadAndPlay(i) {
   setTimeout(() => play(), 50);
 }
 
-// Events
 document.getElementById('btn-play').addEventListener('click', () => {
   player.playing ? pause() : play();
 });
 
 document.getElementById('btn-next').addEventListener('click', () => {
   const songs = player.showFav ? player.filtered : player.songs;
-  if (player.current < songs.length - 1) loadTrack(player.current + 1);
-  else if (player.repeat === 1) loadTrack(0);
+  if (player.current < songs.length - 1) {
+    loadTrack(player.current + 1);
+    if (player.playing) play();
+  } else if (player.repeat === 1) {
+    loadTrack(0);
+    if (player.playing) play();
+  }
 });
 
 document.getElementById('btn-prev').addEventListener('click', () => {
-  if (player.audio && player.audio.currentTime > 3) player.audio.currentTime = 0;
-  else loadTrack(Math.max(0, player.current - 1));
+  if (player.audio && player.audio.currentTime > 3) {
+    player.audio.currentTime = 0;
+  } else {
+    loadTrack(Math.max(0, player.current - 1));
+    if (player.playing) play();
+  }
 });
 
 document.getElementById('btn-repeat').addEventListener('click', () => {
