@@ -1,177 +1,191 @@
 {
-  "totalSongs": 25,
+  "totalSongs": 27,
   "canciones": [
     {
       "id": 0,
       "title": "Andate",
-      "artist": "Romulo Caicedo",
+      "artist": "Romulo caicedo",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Andate%20-%20Romulo%20Caicedo.mp3"
     },
     {
       "id": 1,
-      "title": "El Indio",
-      "artist": "Pastor Lopez",
+      "title": "El indio",
+      "artist": "Pastor lopez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20El%20Indio%20-%20Pastor%20Lopez.mp3"
     },
     {
       "id": 2,
-      "title": "La Venia Bendita",
-      "artist": "Marco Antonio Solis",
+      "title": "La venia bendita",
+      "artist": "Marco antonio solis",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20La%20Venia%20Bendita%20-%20Marco%20Antonio%20Solis.mp3"
     },
     {
       "id": 3,
-      "title": "Lindo Clavelito",
-      "artist": "Rodolfo Aicardi con los Hispanos",
+      "title": "Lindo clavelito",
+      "artist": "Rodolfo aicardi con los hispanos",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Lindo%20Clavelito%20-%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
     },
     {
       "id": 4,
-      "title": "Mala Suerte",
-      "artist": "Rodolfo Aicardi con los Hispanos",
+      "title": "Mala suerte",
+      "artist": "Rodolfo aicardi con los hispanos",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mala%20Suerte%20-%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
     },
     {
       "id": 5,
-      "title": "Mi Canoa",
-      "artist": "Los 50 de Joselito",
+      "title": "Mi canoa",
+      "artist": "Los 50 de joselito",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mi%20Canoa%20-%20Los%2050%20de%20Joselito.mp3"
     },
     {
       "id": 6,
-      "title": "Mi Vieja Barranquilla",
-      "artist": "Nelson Henriquez",
+      "title": "Mi vieja barranquilla",
+      "artist": "Nelson henriquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mi%20Vieja%20Barranquilla%20-%20Nelson%20Henriquez.mp3"
     },
     {
       "id": 7,
-      "title": "Playa Blanca",
-      "artist": "Nelson Henriquez",
+      "title": "Palmira señorial",
+      "artist": "Billos caracas boys",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Palmira%20Se%C3%B1orial%20%20-%20Billos%20Caracas%20Boys.mp3"
+    },
+    {
+      "id": 8,
+      "title": "Playa blanca",
+      "artist": "Nelson henriquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Playa%20Blanca%20-%20Nelson%20Henriquez.mp3"
     },
     {
-      "id": 8,
-      "title": "Quiero que me des tu amor Rodolfo Aicardi con los Hispanos",
-      "artist": "Desconocido",
+      "id": 9,
+      "title": "Quiero que me des tu amor",
+      "artist": "Rodolfo aicardi con los hispanos",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Quiero%20que%20me%20des%20tu%20amor%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
     },
     {
-      "id": 9,
-      "title": "Triste Recuerdo",
-      "artist": "Antonio Aguilar",
+      "id": 10,
+      "title": "Triste recuerdo",
+      "artist": "Antonio aguilar",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Triste%20Recuerdo%20-%20Antonio%20Aguilar.mp3"
     },
     {
-      "id": 10,
-      "title": "A Nadie Le Cuentes",
-      "artist": "Alfredo Gutierrez",
+      "id": 11,
+      "title": "A nadie le cuentes",
+      "artist": "Alfredo gutierrez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20A%20Nadie%20Le%20Cuentes%20-%20Alfredo%20Gutierrez.mp3"
     },
     {
-      "id": 11,
-      "title": "Ahora Seremos Felices",
-      "artist": "Anibal Velasquez",
+      "id": 12,
+      "title": "Ahora seremos felices",
+      "artist": "Anibal velasquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Ahora%20Seremos%20Felices%20-%20Anibal%20Velasquez.mp3"
     },
     {
-      "id": 12,
-      "title": "Alfredo Gutiérrez",
-      "artist": "Ay Elena",
+      "id": 13,
+      "title": "Alfredo gutiérrez",
+      "artist": "Ay elena",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Alfredo%20Guti%C3%A9rrez%20-%20Ay%20Elena.mp3"
     },
     {
-      "id": 13,
-      "title": "Alfredo Gutiérrez",
+      "id": 14,
+      "title": "Alfredo gutiérrez",
       "artist": "Debajo del arbolito",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Alfredo%20Guti%C3%A9rrez%20-%20Debajo%20del%20arbolito.mp3"
     },
     {
-      "id": 14,
-      "title": "El Cumbanchero",
-      "artist": "Anibal Velasquez",
+      "id": 15,
+      "title": "El cumbanchero",
+      "artist": "Anibal velasquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El%20Cumbanchero%20-%20Anibal%20Velasquez.mp3"
     },
     {
-      "id": 15,
-      "title": "El Secreto",
-      "artist": "Romulo Caicedo",
+      "id": 16,
+      "title": "El secreto",
+      "artist": "Romulo caicedo",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El%20Secreto%20-%20Romulo%20Caicedo.mp3"
     },
     {
-      "id": 16,
-      "title": "El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kP32F3F3Fgw",
+      "id": 17,
+      "title": "El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kp32f3f3fgw",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kP32F3F3Fgw.mp3"
     },
     {
-      "id": 17,
-      "title": "La Reina Del Espacio",
-      "artist": "Calixto Ochoa",
+      "id": 18,
+      "title": "Jose_miguel_class_quiereme_en_vida_hgcmoqtqxgq",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Jose_miguel_class_quiereme_en_vida_HGcMoQtQxgQ.mp3"
+    },
+    {
+      "id": 19,
+      "title": "La reina del espacio",
+      "artist": "Calixto ochoa",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20La%20Reina%20Del%20Espacio%20-%20Calixto%20Ochoa.mp3"
     },
     {
-      "id": 18,
-      "title": "Nelson_henriquez_el_pergamino_audio_oNdCW144aj4",
+      "id": 20,
+      "title": "Nelson_henriquez_el_pergamino_audio_ondcw144aj4",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Nelson_henriquez_el_pergamino_audio_oNdCW144aj4.mp3"
     },
     {
-      "id": 19,
+      "id": 21,
       "title": "Querido",
-      "artist": "Cascarrabias - Alci Acosta",
+      "artist": "Cascarrabias - alci acosta",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Querido%20-%20Cascarrabias%20-%20Alci%20Acosta.mp3"
     },
     {
-      "id": 20,
-      "title": "Ramita_de_matimba_gustavo_el_loko_quintero_original_VhcyGOJiegc",
+      "id": 22,
+      "title": "Ramita_de_matimba_gustavo_el_loko_quintero_original_vhcygojiegc",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Ramita_de_matimba_gustavo_el_loko_quintero_original_VhcyGOJiegc.mp3"
     },
     {
-      "id": 21,
-      "title": "Recuerdos_del_festival_pastor_lopez_1973wmv_ie5Oy6alNxA",
+      "id": 23,
+      "title": "Recuerdos_del_festival_pastor_lopez_1973wmv_ie5oy6alnxa",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Recuerdos_del_festival_pastor_lopez_1973wmv_ie5Oy6alNxA.mp3"
     },
     {
-      "id": 22,
+      "id": 24,
       "title": "Regalame una rosa",
       "artist": "Nelson enriquez",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Regalame%20una%20rosa%20-%20Nelson%20enriquez.mp3"
     },
     {
-      "id": 23,
-      "title": "los_corraleros_de_majagual_culebra_cascabel",
+      "id": 25,
+      "title": "Los corraleros de majagual culebra cascabel",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20los_corraleros_de_majagual_culebra_cascabel.mp3"
     },
     {
-      "id": 24,
-      "title": "victor_piero_los_melodicos_rosa",
+      "id": 26,
+      "title": "Victor_piero_los_melodicos_rosa",
       "artist": "Desconocido",
       "duration": 240,
       "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20victor_piero_los_melodicos_rosa.mp3"
