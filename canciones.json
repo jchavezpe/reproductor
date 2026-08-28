@@ -1,103 +1,1118 @@
 {
-  "totalSongs": 14,
+  "totalSongs": 159,
   "canciones": [
     {
-      "id": 0,
-      "title": "A Nadie Le Cuentes",
-      "artist": "Alfredo Gutierrez",
-      "duration": 180,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/A_Nadie_Le_Cuentes.mp3"
-    },
-    {
-      "id": 1,
-      "title": "Ahora Seremos Felices",
-      "artist": "Anibal Velasquez",
-      "duration": 189,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Ahora_Seremos_Felices.mp3"
-    },
-    {
-      "id": 2,
-      "title": "Alfredo Gutiérrez - Ay Elena",
-      "artist": "Alfredo Gutiérrez",
-      "duration": 210,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Alfredo_Gutierrez_-_Ay_Elena.mp3"
-    },
-    {
-      "id": 3,
-      "title": "Alfredo Gutiérrez - Debajo del arbolito",
-      "artist": "Alfredo Gutiérrez",
-      "duration": 200,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Alfredo_Gutierrez_-_Debajo_del_arbolito.mp3"
-    },
-    {
-      "id": 4,
-      "title": "Andate",
-      "artist": "Romulo Caicedo",
-      "duration": 220,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Andate.mp3"
-    },
-    {
-      "id": 5,
-      "title": "El Cumbanchero",
-      "artist": "Anibal Velasquez",
-      "duration": 160,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El_Cumbanchero.mp3"
-    },
-    {
-      "id": 6,
-      "title": "El Indio",
-      "artist": "Pastor Lopez",
+      "id": 111,
+      "title": "a fuego lento",
+      "artist": "el doble poder",
       "duration": 240,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El_Indio.mp3"
-    },
-    {
-      "id": 7,
-      "title": "El Secreto",
-      "artist": "Romulo Caicedo",
-      "duration": 163,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El_Secreto.mp3"
-    },
-    {
-      "id": 8,
-      "title": "El negrito sabroso",
-      "artist": "Rafael Orozco",
-      "duration": 240,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El_negrito_sabroso.mp3"
-    },
-    {
-      "id": 9,
-      "title": "Quiereme en vida",
-      "artist": "Jose Miguel Class",
-      "duration": 195,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Quiereme_en_vida.mp3"
-    },
-    {
-      "id": 10,
-      "title": "La Reina Del Espacio",
-      "artist": "Calixto Ochoa",
-      "duration": 210,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La_Reina_Del_Espacio.mp3"
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/a%20fuego%20lento%20-%20el%20doble%20poder.mp3"
     },
     {
       "id": 11,
-      "title": "La Venia Bendita",
-      "artist": "Marco Antonio Solis",
-      "duration": 153,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La_Venia_Bendita.mp3"
+      "title": "A Nadie Le Cuentes",
+      "artist": "Alfredo Gutierrez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20A%20Nadie%20Le%20Cuentes%20-%20Alfredo%20Gutierrez.mp3"
+    },
+    {
+      "id": 31,
+      "title": "Aceptame Como Soy",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Aceptame%20Como%20Soy.mp3"
+    },
+    {
+      "id": 32,
+      "title": "Adonay",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Adonay.mp3"
     },
     {
       "id": 12,
-      "title": "Lindo Clavelito",
-      "artist": "Rodolfo Aicardi",
-      "duration": 280,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Lindo_Clavelito.mp3"
+      "title": "Ahora Seremos Felices",
+      "artist": "Anibal Velasquez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Ahora%20Seremos%20Felices%20-%20Anibal%20Velasquez.mp3"
     },
     {
       "id": 13,
-      "title": "Los corraleros de majagual",
-      "artist": "Los Corraleros",
-      "duration": 215,
-      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Los_corraleros_de_majagual.mp3"
+      "title": "Alfredo Gutiérrez",
+      "artist": "Ay Elena",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Alfredo%20Gutiérrez%20-%20Ay%20Elena.mp3"
+    },
+    {
+      "id": 14,
+      "title": "Alfredo Gutiérrez",
+      "artist": "Debajo del arbolito",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Alfredo%20Gutiérrez%20-%20Debajo%20del%20arbolito.mp3"
+    },
+    {
+      "id": 33,
+      "title": "Alma Herida (Diomedes Diaz)",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Alma%20Herida%20(Diomedes%20Diaz).mp3"
+    },
+    {
+      "id": 112,
+      "title": "amor de pobre----miltiño",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/amor%20de%20pobre----miltiño.mp3"
+    },
+    {
+      "id": 0,
+      "title": "Andate",
+      "artist": "Romulo Caicedo",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Andate%20-%20Romulo%20Caicedo.mp3"
+    },
+    {
+      "id": 34,
+      "title": "Anhelos",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Anhelos.mp3"
+    },
+    {
+      "id": 113,
+      "title": "ases y tercia de reyes",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/ases%20y%20tercia%20de%20reyes%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 35,
+      "title": "Asi fue Me Querer",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Asi%20fue%20Me%20Querer.mp3"
+    },
+    {
+      "id": 36,
+      "title": "Barquito de Papel",
+      "artist": "Leonardo Favio",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Barquito%20de%20Papel%20-%20Leonardo%20Favio.mp3"
+    },
+    {
+      "id": 114,
+      "title": "besame mucho",
+      "artist": "duo de oro",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/besame%20mucho%20-%20duo%20de%20oro.mp3"
+    },
+    {
+      "id": 37,
+      "title": "Callate",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Callate.mp3"
+    },
+    {
+      "id": 115,
+      "title": "camino de herradura",
+      "artist": "los filipichines",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/camino%20de%20herradura%20-%20los%20filipichines.mp3"
+    },
+    {
+      "id": 38,
+      "title": "Campanas",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Campanas.mp3"
+    },
+    {
+      "id": 116,
+      "title": "canasta de ensueños",
+      "artist": "jorge oñate",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/canasta%20de%20ensueños%20-%20jorge%20oñate.mp3"
+    },
+    {
+      "id": 117,
+      "title": "caray",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/caray%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 39,
+      "title": "Cariñito Sin Mi",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Cariñito%20Sin%20Mi.mp3"
+    },
+    {
+      "id": 118,
+      "title": "causa perdida",
+      "artist": "revelacion vallenata",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/causa%20perdida%20-%20revelacion%20vallenata.mp3"
+    },
+    {
+      "id": 40,
+      "title": "Celos",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Celos.mp3"
+    },
+    {
+      "id": 41,
+      "title": "Chisque",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Chisque.mp3"
+    },
+    {
+      "id": 42,
+      "title": "Colegiala",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Colegiala.mp3"
+    },
+    {
+      "id": 119,
+      "title": "como quieres que te olvide",
+      "artist": "juan piña",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/como%20quieres%20que%20te%20olvide%20-%20juan%20piña.mp3"
+    },
+    {
+      "id": 120,
+      "title": "comprendeme",
+      "artist": "ivan villazon",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/comprendeme%20-%20ivan%20villazon.mp3"
+    },
+    {
+      "id": 121,
+      "title": "con el alma en las manos sagitario",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/con%20el%20alma%20en%20las%20manos%20sagitario.mp3"
+    },
+    {
+      "id": 122,
+      "title": "con la punta del palo",
+      "artist": "farid ortiz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/con%20la%20punta%20del%20palo%20-%20farid%20ortiz.mp3"
+    },
+    {
+      "id": 123,
+      "title": "con los crespo hechos",
+      "artist": "embajadores vallenato",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/con%20los%20crespo%20hechos%20-%20embajadores%20vallenato.mp3"
+    },
+    {
+      "id": 43,
+      "title": "Con mucho gusto",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Con%20mucho%20gusto%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 124,
+      "title": "con quien andaras",
+      "artist": "jorge valbuena",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/con%20quien%20andaras%20-%20jorge%20valbuena.mp3"
+    },
+    {
+      "id": 44,
+      "title": "De rodillas",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/De%20rodillas.mp3"
+    },
+    {
+      "id": 29,
+      "title": "Dejame llorar",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/03%20Dejame%20llorar.mp3"
+    },
+    {
+      "id": 45,
+      "title": "Desilucion",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Desilucion.mp3"
+    },
+    {
+      "id": 46,
+      "title": "Diana (Diomedes Díaz)",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Diana%20(Diomedes%20Díaz).mp3"
+    },
+    {
+      "id": 47,
+      "title": "Dime Pajarito",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Dime%20Pajarito.mp3"
+    },
+    {
+      "id": 125,
+      "title": "diomedes dias",
+      "artist": "no me la llames mas",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/diomedes%20dias%20-%20no%20me%20la%20llames%20mas.mp3"
+    },
+    {
+      "id": 126,
+      "title": "diomedez diaz",
+      "artist": "la falla fue tuya",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/diomedez%20diaz%20-%20la%20falla%20fue%20tuya.mp3"
+    },
+    {
+      "id": 48,
+      "title": "Distintos Caminos",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Distintos%20Caminos.mp3"
+    },
+    {
+      "id": 49,
+      "title": "Donde Estas",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Donde%20Estas.mp3"
+    },
+    {
+      "id": 50,
+      "title": "Dos Mujeres",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Dos%20Mujeres.mp3"
+    },
+    {
+      "id": 127,
+      "title": "dos pasajes",
+      "artist": "lupe y polo",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/dos%20pasajes%20-%20lupe%20y%20polo.mp3"
+    },
+    {
+      "id": 28,
+      "title": "Dos Rosas",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/02%20Dos%20Rosas.mp3"
+    },
+    {
+      "id": 51,
+      "title": "Dos Rosas ALFREDO GUTIERREZ",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Dos%20Rosas%20ALFREDO%20GUTIERREZ.mp3"
+    },
+    {
+      "id": 52,
+      "title": "El Ausente",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20Ausente.mp3"
+    },
+    {
+      "id": 128,
+      "title": "el ausente",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/el%20ausente%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 129,
+      "title": "el baile del insecto",
+      "artist": "poder campesino",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/el%20baile%20del%20insecto%20-%20poder%20campesino.mp3"
+    },
+    {
+      "id": 130,
+      "title": "el chaman",
+      "artist": "carranguero de la frontera",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/el%20chaman%20-%20carranguero%20de%20la%20frontera.mp3"
+    },
+    {
+      "id": 15,
+      "title": "El Cumbanchero",
+      "artist": "Anibal Velasquez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El%20Cumbanchero%20-%20Anibal%20Velasquez.mp3"
+    },
+    {
+      "id": 56,
+      "title": "El eco de tu adios",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20eco%20de%20tu%20adios%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 53,
+      "title": "El Higueron",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20Higueron.mp3"
+    },
+    {
+      "id": 54,
+      "title": "El Hijo Ausente",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20Hijo%20Ausente.mp3"
+    },
+    {
+      "id": 1,
+      "title": "El Indio",
+      "artist": "Pastor Lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20El%20Indio%20-%20Pastor%20Lopez.mp3"
+    },
+    {
+      "id": 57,
+      "title": "El llanto de un rey",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20llanto%20de%20un%20rey.mp3"
+    },
+    {
+      "id": 55,
+      "title": "El Parrandon",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/El%20Parrandon.mp3"
+    },
+    {
+      "id": 16,
+      "title": "El Secreto",
+      "artist": "Romulo Caicedo",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El%20Secreto%20-%20Romulo%20Caicedo.mp3"
+    },
+    {
+      "id": 17,
+      "title": "El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kP32F3F3Fgw",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20El_negrito_sabroson_rafael_orozco_y_el_binomio_de_oro_video_oficial_kP32F3F3Fgw.mp3"
+    },
+    {
+      "id": 58,
+      "title": "Ella Te Fuiste",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Ella%20Te%20Fuiste.mp3"
+    },
+    {
+      "id": 59,
+      "title": "Esa",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Esa.mp3"
+    },
+    {
+      "id": 60,
+      "title": "Fantasia Diomedes Diaz",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Fantasia%20Diomedes%20Diaz.mp3"
+    },
+    {
+      "id": 61,
+      "title": "Festival en Guarare",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Festival%20en%20Guarare.mp3"
+    },
+    {
+      "id": 131,
+      "title": "flor de bulevart---el caballero gaucho",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/flor%20de%20bulevart---el%20caballero%20gaucho.mp3"
+    },
+    {
+      "id": 62,
+      "title": "Fue Por una cerveza",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Fue%20Por%20una%20cerveza.mp3"
+    },
+    {
+      "id": 63,
+      "title": "Golpe Con Golpe",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Golpe%20Con%20Golpe.mp3"
+    },
+    {
+      "id": 64,
+      "title": "Guarilaque mix 1",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Guarilaque%20mix%201%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 132,
+      "title": "hasta que te conoci",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/hasta%20que%20te%20conoci%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 133,
+      "title": "hija",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/hija%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 134,
+      "title": "hola corazon",
+      "artist": "los serranitos",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/hola%20corazon%20-%20los%20serranitos.mp3"
+    },
+    {
+      "id": 135,
+      "title": "inocente pobre amigo",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/inocente%20pobre%20amigo%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 18,
+      "title": "Jose_miguel_class_quiereme_en_vida_HGcMoQtQxgQ",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Jose_miguel_class_quiereme_en_vida_HGcMoQtQxgQ.mp3"
+    },
+    {
+      "id": 65,
+      "title": "Juro Que Te Amo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Juro%20Que%20Te%20Amo.mp3"
+    },
+    {
+      "id": 66,
+      "title": "La Candelosa",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Candelosa.mp3"
+    },
+    {
+      "id": 27,
+      "title": "La Carta Numero 3",
+      "artist": "Alfredo Gutierrez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/01%20La%20Carta%20Numero%203%20-%20Alfredo%20Gutierrez.mp3"
+    },
+    {
+      "id": 67,
+      "title": "La Celosa",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Celosa.mp3"
+    },
+    {
+      "id": 68,
+      "title": "La Creciente",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Creciente.mp3"
+    },
+    {
+      "id": 136,
+      "title": "la de estrato 8",
+      "artist": "los doctores de la carranga",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20de%20estrato%208%20-%20los%20doctores%20de%20la%20carranga.mp3"
+    },
+    {
+      "id": 137,
+      "title": "la diferencia",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20diferencia%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 69,
+      "title": "La Espinita",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Espinita.mp3"
+    },
+    {
+      "id": 70,
+      "title": "La Gran Noche--Los Tucanes",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Gran%20Noche--Los%20Tucanes.mp3"
+    },
+    {
+      "id": 138,
+      "title": "la media arepa",
+      "artist": "san miguelito",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20media%20arepa%20-%20san%20miguelito.mp3"
+    },
+    {
+      "id": 139,
+      "title": "la muerte del palomo",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20muerte%20del%20palomo%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 140,
+      "title": "la muerte del zancudo",
+      "artist": "poder campesino",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20muerte%20del%20zancudo%20-%20poder%20campesino.mp3"
+    },
+    {
+      "id": 141,
+      "title": "la perra chiripa",
+      "artist": "los fiesteros de boyaca",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20perra%20chiripa%20-%20los%20fiesteros%20de%20boyaca.mp3"
+    },
+    {
+      "id": 142,
+      "title": "la porcina",
+      "artist": "oscar humberto gomez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20porcina%20-%20oscar%20humberto%20gomez.mp3"
+    },
+    {
+      "id": 19,
+      "title": "La Reina Del Espacio",
+      "artist": "Calixto Ochoa",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20La%20Reina%20Del%20Espacio%20-%20Calixto%20Ochoa.mp3"
+    },
+    {
+      "id": 143,
+      "title": "la semillita",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20semillita%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 144,
+      "title": "la tusa",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/la%20tusa%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 71,
+      "title": "La Venezolana",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/La%20Venezolana.mp3"
+    },
+    {
+      "id": 2,
+      "title": "La Venia Bendita",
+      "artist": "Marco Antonio Solis",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20La%20Venia%20Bendita%20-%20Marco%20Antonio%20Solis.mp3"
+    },
+    {
+      "id": 145,
+      "title": "lagrimas y lluvia",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/lagrimas%20y%20lluvia%20-%20juan%20gabriel.MP3"
+    },
+    {
+      "id": 72,
+      "title": "Las Caleñas",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Las%20Caleñas.mp3"
+    },
+    {
+      "id": 3,
+      "title": "Lindo Clavelito",
+      "artist": "Rodolfo Aicardi con los Hispanos",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Lindo%20Clavelito%20-%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
+    },
+    {
+      "id": 73,
+      "title": "Listo pa' la foto",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Listo%20pa'%20la%20foto%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 74,
+      "title": "Lloro Mi Corazon",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Lloro%20Mi%20Corazon.mp3"
+    },
+    {
+      "id": 75,
+      "title": "Los Hispanos-Carita De Angel",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Los%20Hispanos-Carita%20De%20Angel.mp3"
+    },
+    {
+      "id": 76,
+      "title": "Los Hispanos-La Misma Vaina",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Los%20Hispanos-La%20Misma%20Vaina.mp3"
+    },
+    {
+      "id": 25,
+      "title": "los_corraleros_de_majagual_culebra_cascabel",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20los_corraleros_de_majagual_culebra_cascabel.mp3"
+    },
+    {
+      "id": 4,
+      "title": "Mala Suerte",
+      "artist": "Rodolfo Aicardi con los Hispanos",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mala%20Suerte%20-%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
+    },
+    {
+      "id": 146,
+      "title": "mama vieja----los visconti",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/mama%20vieja----los%20visconti.mp3"
+    },
+    {
+      "id": 77,
+      "title": "Mas que un loco",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Mas%20que%20un%20loco%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 5,
+      "title": "Mi Canoa",
+      "artist": "Los 50 de Joselito",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mi%20Canoa%20-%20Los%2050%20de%20Joselito.mp3"
+    },
+    {
+      "id": 80,
+      "title": "Mi carta Final",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Mi%20carta%20Final.mp3"
+    },
+    {
+      "id": 147,
+      "title": "mi hermano y yo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/mi%20hermano%20y%20yo.mp3"
+    },
+    {
+      "id": 78,
+      "title": "Mi Morenita",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Mi%20Morenita.mp3"
+    },
+    {
+      "id": 79,
+      "title": "Mi Pedazo De Cielo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Mi%20Pedazo%20De%20Cielo.mp3"
+    },
+    {
+      "id": 6,
+      "title": "Mi Vieja Barranquilla",
+      "artist": "Nelson Henriquez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Mi%20Vieja%20Barranquilla%20-%20Nelson%20Henriquez.mp3"
+    },
+    {
+      "id": 81,
+      "title": "Momentos De Amor",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Momentos%20De%20Amor.mp3"
+    },
+    {
+      "id": 82,
+      "title": "Muchacha De 15",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Muchacha%20De%2015.mp3"
+    },
+    {
+      "id": 83,
+      "title": "Muere Una Flor",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Muere%20Una%20Flor.mp3"
+    },
+    {
+      "id": 84,
+      "title": "Muere una flor Rafael Orozco",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Muere%20una%20flor%20Rafael%20Orozco.mp3"
+    },
+    {
+      "id": 85,
+      "title": "Mundo De Ilusiones",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Mundo%20De%20Ilusiones.mp3"
+    },
+    {
+      "id": 20,
+      "title": "Nelson_henriquez_el_pergamino_audio_oNdCW144aj4",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Nelson_henriquez_el_pergamino_audio_oNdCW144aj4.mp3"
+    },
+    {
+      "id": 86,
+      "title": "No Pasara Lo Mismo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/No%20Pasara%20Lo%20Mismo.mp3"
+    },
+    {
+      "id": 87,
+      "title": "No Se Puede",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/No%20Se%20Puede.mp3"
+    },
+    {
+      "id": 88,
+      "title": "No Vale Quererla",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/No%20Vale%20Quererla.mp3"
+    },
+    {
+      "id": 89,
+      "title": "Nostagia",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Nostagia.mp3"
+    },
+    {
+      "id": 90,
+      "title": "Nuestro Anillo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Nuestro%20Anillo.mp3"
+    },
+    {
+      "id": 91,
+      "title": "Pa Adorarte Más Rafael Orozco",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Pa%20Adorarte%20Más%20Rafael%20Orozco.mp3"
+    },
+    {
+      "id": 30,
+      "title": "Pa' toda la vida",
+      "artist": "Los Hermanos Zuleta",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/04%20Pa'%20toda%20la%20vida%20-%20Los%20Hermanos%20Zuleta.mp3"
+    },
+    {
+      "id": 7,
+      "title": "Palmira Señorial",
+      "artist": "Billos Caracas Boys",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Palmira%20Señorial%20-%20Billos%20Caracas%20Boys.mp3"
+    },
+    {
+      "id": 92,
+      "title": "Pecadora",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Pecadora.mp3"
+    },
+    {
+      "id": 148,
+      "title": "penas de un soldado",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/penas%20de%20un%20soldado%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 93,
+      "title": "Perdido En Las Copas Romulo Caicedo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Perdido%20En%20Las%20Copas%20Romulo%20Caicedo.mp3"
+    },
+    {
+      "id": 8,
+      "title": "Playa Blanca",
+      "artist": "Nelson Henriquez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Playa%20Blanca%20-%20Nelson%20Henriquez.mp3"
+    },
+    {
+      "id": 94,
+      "title": "Que sera de mi",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Que%20sera%20de%20mi.mp3"
+    },
+    {
+      "id": 149,
+      "title": "querida",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/querida%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 21,
+      "title": "Querido",
+      "artist": "Cascarrabias - Alci Acosta",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Querido%20-%20Cascarrabias%20-%20Alci%20Acosta.mp3"
+    },
+    {
+      "id": 9,
+      "title": "Quiero que me des tu amor Rodolfo Aicardi con los Hispanos",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Quiero%20que%20me%20des%20tu%20amor%20Rodolfo%20Aicardi%20con%20los%20Hispanos.mp3"
+    },
+    {
+      "id": 95,
+      "title": "Quiero saber de ti",
+      "artist": "inquietos",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Quiero%20saber%20de%20ti%20-%20inquietos.mp3"
+    },
+    {
+      "id": 22,
+      "title": "Ramita_de_matimba_gustavo_el_loko_quintero_original_VhcyGOJiegc",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Ramita_de_matimba_gustavo_el_loko_quintero_original_VhcyGOJiegc.mp3"
+    },
+    {
+      "id": 96,
+      "title": "Reconozco Que Te Amo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Reconozco%20Que%20Te%20Amo.mp3"
+    },
+    {
+      "id": 23,
+      "title": "Recuerdos_del_festival_pastor_lopez_1973wmv_ie5Oy6alNxA",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Recuerdos_del_festival_pastor_lopez_1973wmv_ie5Oy6alNxA.mp3"
+    },
+    {
+      "id": 24,
+      "title": "Regalame una rosa",
+      "artist": "Nelson enriquez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20Regalame%20una%20rosa%20-%20Nelson%20enriquez.mp3"
+    },
+    {
+      "id": 150,
+      "title": "regalame una rosa",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/regalame%20una%20rosa%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 97,
+      "title": "Relicario De Besos",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Relicario%20De%20Besos.mp3"
+    },
+    {
+      "id": 98,
+      "title": "Rodolfo Aircardy-Papelito Blanca",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Rodolfo%20Aircardy-Papelito%20Blanca.mp3"
+    },
+    {
+      "id": 99,
+      "title": "Romulo Caicedo Mi Dicha",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Romulo%20Caicedo%20Mi%20Dicha.mp3"
+    },
+    {
+      "id": 100,
+      "title": "Romulo Caicedo-Por Que Lo Hiciste",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Romulo%20Caicedo-Por%20Que%20Lo%20Hiciste.mp3"
+    },
+    {
+      "id": 101,
+      "title": "Se Equivoco",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Se%20Equivoco.mp3"
+    },
+    {
+      "id": 151,
+      "title": "se me olvido otra vez",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/se%20me%20olvido%20otra%20vez%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 152,
+      "title": "sin medir distancia",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/sin%20medir%20distancia%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 102,
+      "title": "Solo Un Cigarro",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Solo%20Un%20Cigarro.mp3"
+    },
+    {
+      "id": 103,
+      "title": "Sombra Perdida",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Sombra%20Perdida.mp3"
+    },
+    {
+      "id": 104,
+      "title": "Sorbito De Champagne",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Sorbito%20De%20Champagne.mp3"
+    },
+    {
+      "id": 105,
+      "title": "Tabaco Y Ron",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Tabaco%20Y%20Ron.mp3"
+    },
+    {
+      "id": 106,
+      "title": "Tanto Amor",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Tanto%20Amor.mp3"
+    },
+    {
+      "id": 107,
+      "title": "Te Seguire Queriendo",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Te%20Seguire%20Queriendo.mp3"
+    },
+    {
+      "id": 153,
+      "title": "te sigo amando",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/te%20sigo%20amando%20-%20juan%20gabriel.mp3"
+    },
+    {
+      "id": 108,
+      "title": "Tierra de cantores",
+      "artist": "Los Hermanos Zuleta",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Tierra%20de%20cantores%20-%20Los%20Hermanos%20Zuleta.mp3"
+    },
+    {
+      "id": 154,
+      "title": "traicionera",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/traicionera%20-%20pastor%20lopez.mp3"
+    },
+    {
+      "id": 10,
+      "title": "Triste Recuerdo",
+      "artist": "Antonio Aguilar",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/00%20Triste%20Recuerdo%20-%20Antonio%20Aguilar.mp3"
+    },
+    {
+      "id": 155,
+      "title": "tu abandono",
+      "artist": "juan gabriel",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/tu%20abandono%20-%20juan%20gabriel.MP3"
+    },
+    {
+      "id": 109,
+      "title": "Tu Carcel",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Tu%20Carcel.mp3"
+    },
+    {
+      "id": 156,
+      "title": "tu eres la reina",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/tu%20eres%20la%20reina%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 157,
+      "title": "tu serenata",
+      "artist": "diomedes diaz",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/tu%20serenata%20-%20diomedes%20diaz.mp3"
+    },
+    {
+      "id": 26,
+      "title": "victor_piero_los_melodicos_rosa",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/000%20victor_piero_los_melodicos_rosa.mp3"
+    },
+    {
+      "id": 110,
+      "title": "Vos de acordeones",
+      "artist": "Desconocido",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/Vos%20de%20acordeones.mp3"
+    },
+    {
+      "id": 158,
+      "title": "yolanda",
+      "artist": "pastor lopez",
+      "duration": 240,
+      "url": "https://raw.githubusercontent.com/jchavezpe/reproductor/main/mp3s/yolanda%20-%20pastor%20lopez.mp3"
     }
   ]
 }
