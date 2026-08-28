@@ -606,8 +606,12 @@ function loadTrack(i) {
   }
   
   player.audio.addEventListener('ended', () => {
-    // 🔄 Si la siguiente canción ya está pre-cargada (gapless), usarla
+    // 🔄 Si la siguiente canción ya está sonando (crossfade), cambiar a ella
     if (player.gaplessLoaded && player.nextAudio && player.nextIndex >= 0) {
+      // Pausar la anterior
+      player.audio.pause();
+      
+      // Cambiar a la siguiente
       player.current = player.nextIndex;
       player.audio = player.nextAudio;
       player.nextAudio = null;
@@ -617,10 +621,9 @@ function loadTrack(i) {
       player.audio.addEventListener('timeupdate', updateProgress);
       player.audio.addEventListener('ended', arguments.callee);
       
-      player.audio.play();
       updateDisplay();
       scrollToCurrentSong();
-      console.log('▶️ Siguiente canción reproduciendo (gapless)');
+      console.log('✅ Crossfade completado: ahora suena la siguiente');
     } else {
       // Fallback: cargar siguiente como antes
       const next = getNextIndex();
@@ -740,7 +743,7 @@ function updateProgress() {
   document.getElementById('current').textContent = fmt(player.audio.currentTime);
   document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
   
-  // 🔄 GAPLESS PLAYBACK: Pre-cargar siguiente canción cuando faltan 0.5 segundos
+  // 🔄 CROSSFADE: Cuando falten 0.5s, INICIAR la siguiente (ambas suenan juntas)
   const timeRemaining = player.audio.duration - player.audio.currentTime;
   if (timeRemaining <= 0.5 && !player.gaplessLoaded && player.playing) {
     const next = getNextIndex();
@@ -758,8 +761,10 @@ function updateProgress() {
         } catch (e) {}
       }
       
+      // 🎵 REPRODUCIR la siguiente INMEDIATAMENTE (ambas suenan juntas)
+      player.nextAudio.play().catch(e => console.error('Error reproduciendo siguiente:', e));
       player.gaplessLoaded = true;
-      console.log('🔄 Siguiente canción pre-cargada (gapless)');
+      console.log('🔄 Crossfade iniciado: ambas canciones sonando juntas');
     }
   }
 }
