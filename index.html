@@ -446,9 +446,6 @@ const player = {
   compressor: null,
   gain: null,
   analyser: null,
-  nextAudio: null,
-  nextIndex: -1,
-  gaplessLoaded: false,
   songs: [],
   current: 0,
   playing: false,
@@ -578,21 +575,31 @@ function getPrevIndex() {
   }
 }
 
-function loadTrack(i) {
+function loadTrack(i, isCrossfade = false) {
   const songs = player.filtered;
   if (i < 0 || i >= songs.length) return;
   player.current = i;
   
-  // Limpiar pre-carga de gapless si se carga otra canción
-  if (player.nextAudio) {
-    player.nextAudio.pause();
-    player.nextAudio = null;
+  const oldAudio = player.audio;
+  
+  if (oldAudio) {
+    // Desvincula la barra de progreso de la canción vieja
+    oldAudio.removeEventListener('timeupdate', updateProgress);
+    
+    if (isCrossfade) {
+      // Deja la canción vieja sonando 1.5 segundos de fondo antes de cortarla
+      setTimeout(() => {
+        oldAudio.pause();
+        oldAudio.src = "";
+      }, 1500);
+    } else {
+      // Si el usuario cambia manualmente, corta la canción al instante
+      oldAudio.pause();
+      oldAudio.src = "";
+    }
   }
-  player.gaplessLoaded = false;
-  player.nextIndex = -1;
   
-  if (player.audio) player.audio.pause();
-  
+  // Crea y carga la canción nueva
   const song = songs[i];
   player.audio = new Audio();
   player.audio.crossOrigin = "anonymous";
@@ -605,34 +612,14 @@ function loadTrack(i) {
     } catch (e) {}
   }
   
+  // Cuando la nueva canción termine, intenta cargar la siguiente
   player.audio.addEventListener('ended', () => {
-    // 🔄 Si la siguiente canción ya está sonando (crossfade), cambiar a ella
-    if (player.gaplessLoaded && player.nextAudio && player.nextIndex >= 0) {
-      // Pausar la anterior
-      player.audio.pause();
-      
-      // Cambiar a la siguiente
-      player.current = player.nextIndex;
-      player.audio = player.nextAudio;
-      player.nextAudio = null;
-      player.gaplessLoaded = false;
-      
-      // Re-conectar eventos al nuevo audio
-      player.audio.addEventListener('timeupdate', updateProgress);
-      player.audio.addEventListener('ended', arguments.callee);
-      
-      updateDisplay();
-      scrollToCurrentSong();
-      console.log('✅ Crossfade completado: ahora suena la siguiente');
+    const next = getNextIndex();
+    if (next >= 0) {
+      loadTrack(next, true);
+      play();
     } else {
-      // Fallback: cargar siguiente como antes
-      const next = getNextIndex();
-      if (next >= 0) {
-        loadTrack(next);
-        play();
-      } else {
-        pause();
-      }
+      pause();
     }
   });
   
@@ -645,6 +632,7 @@ function loadTrack(i) {
     console.error('Audio error:', e);
   });
   
+  // Actualiza la interfaz visual al instante
   updateDisplay();
   scrollToCurrentSong();
 }
@@ -743,28 +731,17 @@ function updateProgress() {
   document.getElementById('current').textContent = fmt(player.audio.currentTime);
   document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
   
-  // 🔄 CROSSFADE: Cuando falten 0.5s, INICIAR la siguiente (ambas suenan juntas)
+  // CROSSFADE: Verifica si faltan 1.5 segundos o menos
   const timeRemaining = player.audio.duration - player.audio.currentTime;
-  if (timeRemaining <= 0.5 && !player.gaplessLoaded && player.playing) {
+  
+  // isCrossfading evita que se ejecute la orden de cambio decenas de veces por segundo
+  if (timeRemaining <= 1.5 && timeRemaining > 0 && !player.audio.isCrossfading && player.playing) {
+    player.audio.isCrossfading = true;
+    
     const next = getNextIndex();
     if (next >= 0) {
-      player.nextIndex = next;
-      player.nextAudio = new Audio();
-      player.nextAudio.crossOrigin = "anonymous";
-      player.nextAudio.src = player.filtered[next].url;
-      
-      // Conectar al audio context
-      if (player.audioCtx) {
-        try {
-          const src = player.audioCtx.createMediaElementAudioSource(player.nextAudio);
-          src.connect(player.gain);
-        } catch (e) {}
-      }
-      
-      // 🎵 REPRODUCIR la siguiente INMEDIATAMENTE (ambas suenan juntas)
-      player.nextAudio.play().catch(e => console.error('Error reproduciendo siguiente:', e));
-      player.gaplessLoaded = true;
-      console.log('🔄 Crossfade iniciado: ambas canciones sonando juntas');
+      loadTrack(next, true);
+      play();
     }
   }
 }
