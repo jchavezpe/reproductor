@@ -220,16 +220,16 @@
       color: #fff;
       line-height: 1.1;
       overflow: hidden;
+      white-space: nowrap;
     }
     
     .song-title-inner {
       display: inline-block;
       white-space: nowrap;
       padding-right: 1rem;
-      animation: scroll 15s linear infinite;
     }
     
-    .song-title.scrollable .song-title-inner {
+    .song-item.playing .song-title-inner {
       animation: scroll 15s linear infinite;
     }
     
@@ -248,16 +248,16 @@
       margin-top: 0.2rem;
       line-height: 1.1;
       overflow: hidden;
+      white-space: nowrap;
     }
     
     .song-artist-inner {
       display: inline-block;
       white-space: nowrap;
       padding-right: 1rem;
-      animation: scroll 15s linear infinite;
     }
     
-    .song-artist.scrollable .song-artist-inner {
+    .song-item.playing .song-artist-inner {
       animation: scroll 15s linear infinite;
     }
     
@@ -647,11 +647,13 @@ function updateDisplay() {
 
 function updateList() {
   const songs = player.filtered;
-  const html = songs.map((s, i) => `
-    <div class="song-item ${i === player.current ? 'playing' : ''}" onclick="loadAndPlay(${i})">
+  const html = songs.map((s, i) => {
+    const isPlaying = i === player.current;
+    return `
+    <div class="song-item ${isPlaying ? 'playing' : ''}" onclick="loadAndPlay(${i})">
       <div class="song-info">
-        <div class="song-title">${s.title}</div>
-        <div class="song-artist">${s.artist}</div>
+        <div class="song-title">${isPlaying ? `<span class="song-title-inner">${s.title}</span>` : s.title}</div>
+        <div class="song-artist">${isPlaying ? `<span class="song-artist-inner">${s.artist}</span>` : s.artist}</div>
       </div>
       <div style="display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;">
         <div class="song-duration">${fmt(s.duration)}</div>
@@ -660,7 +662,8 @@ function updateList() {
         </button>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
   
   document.getElementById('playlist').innerHTML = `<div class="playlist-title">${songs.length} canciones</div>` + html;
 }
