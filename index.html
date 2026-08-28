@@ -628,6 +628,11 @@ function loadTrack(i, isCrossfade = false) {
     document.getElementById('remaining').textContent = '-' + fmt(player.audio.duration - player.audio.currentTime);
   });
   
+  // Re-aplicar metadata de la pantalla bloqueada cuando el audio realmente empieza
+  player.audio.addEventListener('playing', () => {
+    updateMediaSession(songs[player.current]);
+  });
+  
   player.audio.addEventListener('error', (e) => {
     console.error('Audio error:', e);
   });
@@ -703,9 +708,14 @@ function updateMediaSession(s) {
     artist: s.artist,
     album: 'Clásicos',
     artwork: [
+      { src: 'https://raw.githubusercontent.com/jchavezpe/reproductor/main/cover.png', sizes: '96x96', type: 'image/png' },
+      { src: 'https://raw.githubusercontent.com/jchavezpe/reproductor/main/cover.png', sizes: '128x128', type: 'image/png' },
+      { src: 'https://raw.githubusercontent.com/jchavezpe/reproductor/main/cover.png', sizes: '256x256', type: 'image/png' },
       { src: 'https://raw.githubusercontent.com/jchavezpe/reproductor/main/cover.png', sizes: '512x512', type: 'image/png' }
     ]
   });
+  
+  navigator.mediaSession.playbackState = player.playing ? 'playing' : 'paused';
   
   navigator.mediaSession.setActionHandler('play', () => play());
   navigator.mediaSession.setActionHandler('pause', () => pause());
