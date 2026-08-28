@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1">
   <title>🎵 Reproductor Clásico</title>
   <style>
     * {
@@ -14,9 +14,10 @@
     }
     
     html, body {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
+      position: fixed;
     }
     
     body {
@@ -28,25 +29,26 @@
     #app-container {
       display: flex;
       flex-direction: column;
-      height: 100vh;
       width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
     
     .navbar {
       background: rgba(0,0,0,0.4);
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 0.8rem 1rem;
+      padding: 0.8rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-shrink: 0;
-      gap: 1rem;
+      gap: 0.8rem;
+      min-height: 60px;
     }
     
     .navbar-title {
-      min-width: 0;
       flex: 1;
+      min-width: 0;
     }
     
     .navbar-label {
@@ -54,7 +56,6 @@
       color: #1db954;
       font-weight: 700;
       letter-spacing: 1.5px;
-      text-transform: uppercase;
     }
     
     .navbar h1 {
@@ -81,7 +82,6 @@
       align-items: center;
       justify-content: center;
       font-size: 18px;
-      transition: all 0.2s;
       flex-shrink: 0;
     }
     
@@ -94,6 +94,9 @@
       padding: 0.8rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       flex-shrink: 0;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
     }
     
     input[type="text"] {
@@ -112,22 +115,26 @@
     }
     
     .now-playing {
-      padding: 1.2rem 1rem;
+      padding: 1rem;
       background: rgba(29, 185, 84, 0.05);
       border-bottom: 1px solid rgba(29, 185, 84, 0.2);
       text-align: center;
       flex-shrink: 0;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
     #visualizer {
       width: 100%;
-      height: 70px;
-      margin-bottom: 1rem;
+      height: 60px;
+      margin-bottom: 0.8rem;
       opacity: 0.8;
     }
     
     .now-playing h2 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       margin: 0;
       word-break: break-word;
@@ -137,12 +144,11 @@
     .now-playing p {
       font-size: 14px;
       color: #b3b3b3;
-      margin: 0.4rem 0 0;
-      word-break: break-word;
+      margin: 0.5rem 0 0;
     }
     
     .now-playing-actions {
-      margin-top: 0.7rem;
+      margin-top: 0.8rem;
       display: flex;
       justify-content: center;
       gap: 0.6rem;
@@ -157,7 +163,6 @@
       border-radius: 16px;
       font-size: 13px;
       cursor: pointer;
-      transition: all 0.2s;
       white-space: nowrap;
     }
     
@@ -166,9 +171,13 @@
     }
     
     .progress-section {
-      padding: 0.7rem 1rem;
+      padding: 0.8rem;
       background: rgba(0,0,0,0.2);
       flex-shrink: 0;
+      min-height: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
     .progress-bar-container {
@@ -222,7 +231,6 @@
       background: rgba(255,255,255,0.05);
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s;
       font-size: 13px;
       border-left: 3px solid transparent;
       display: flex;
@@ -283,6 +291,7 @@
       align-items: center;
       flex-shrink: 0;
       flex-wrap: wrap;
+      min-height: 65px;
     }
     
     .btn-play {
@@ -298,7 +307,6 @@
       justify-content: center;
       font-size: 24px;
       font-weight: 700;
-      transition: all 0.2s;
       box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
       flex-shrink: 0;
     }
@@ -315,7 +323,8 @@
       flex-direction: column;
       gap: 0.8rem;
       flex-shrink: 0;
-      max-height: 150px;
+      max-height: 100px;
+      overflow-y: auto;
     }
     
     .volume-panel.show {
@@ -326,11 +335,6 @@
       display: flex;
       align-items: center;
       gap: 0.8rem;
-    }
-    
-    .volume-control label {
-      font-size: 13px;
-      white-space: nowrap;
     }
     
     input[type="range"] {
@@ -397,57 +401,37 @@
       background: rgba(29, 185, 84, 0.3);
       border-radius: 3px;
     }
-
-    @media (max-width: 360px) {
-      .navbar {
-        padding: 0.6rem 0.8rem;
-      }
-      .now-playing {
-        padding: 1rem;
-      }
-      .now-playing h2 {
-        font-size: 18px;
-      }
-      .controls {
-        gap: 0.6rem;
-        padding: 0.6rem;
-      }
-    }
   </style>
 </head>
 <body>
 
 <div id="app-container">
   
-  <!-- Navbar -->
   <div class="navbar">
     <div class="navbar-title">
       <div class="navbar-label">🎵 Clásicos</div>
-      <h1>Mi Reproductor</h1>
+      <h1>Reproductor</h1>
     </div>
     <div class="button-group">
-      <button id="btn-favorites-toggle" title="Favoritos">❤️</button>
-      <button id="btn-settings" title="Configuración">⚙️</button>
+      <button id="btn-favorites-toggle">❤️</button>
+      <button id="btn-settings">⚙️</button>
     </div>
   </div>
   
-  <!-- Search -->
   <div class="search-bar">
-    <input type="text" id="search-input" placeholder="Buscar canción...">
+    <input type="text" id="search-input" placeholder="Buscar...">
   </div>
   
-  <!-- Now Playing -->
   <div class="now-playing">
-    <canvas id="visualizer" width="360" height="70"></canvas>
+    <canvas id="visualizer" width="360" height="60"></canvas>
     <h2 id="song-title">Cargando...</h2>
     <p id="song-artist">Conectando...</p>
     <div class="now-playing-actions">
-      <button id="btn-add-favorite" class="btn-small">❤️ Agregar a Favoritos</button>
+      <button id="btn-add-favorite" class="btn-small">❤️ Agregar</button>
       <span id="song-duration" style="font-size: 13px; color: #888;">0:00</span>
     </div>
   </div>
   
-  <!-- Progress -->
   <div class="progress-section">
     <div class="progress-bar-container" id="progress-container">
       <div class="progress-bar" id="progress-bar"></div>
@@ -458,27 +442,24 @@
     </div>
   </div>
   
-  <!-- Playlist -->
   <div class="playlist-section">
     <div class="playlist-count">
       <div class="loading">
         <span class="spinner"></span>
-        Cargando canciones...
+        Cargando...
       </div>
     </div>
     <div class="playlist-list" id="queue-list"></div>
   </div>
   
-  <!-- Controls -->
   <div class="controls">
-    <button id="btn-shuffle" title="Mezclar">🔀</button>
-    <button id="btn-prev" title="Anterior">⏮️</button>
-    <button id="btn-play" class="btn-play" title="Reproducir">▶️</button>
-    <button id="btn-next" title="Siguiente">⏭️</button>
-    <button id="btn-repeat" title="Repetir">🔁</button>
+    <button id="btn-shuffle">🔀</button>
+    <button id="btn-prev">⏮️</button>
+    <button id="btn-play" class="btn-play">▶️</button>
+    <button id="btn-next">⏭️</button>
+    <button id="btn-repeat">🔁</button>
   </div>
   
-  <!-- Volume Panel -->
   <div id="volume-panel" class="volume-panel">
     <div class="volume-control">
       <span>🔊</span>
@@ -506,27 +487,6 @@ const player = {
 };
 
 const GITHUB_JSON_URL = "https://raw.githubusercontent.com/jchavezpe/reproductor/main/canciones.json";
-
-// Función para convertir URL de Google Drive a streaming
-function getStreamableUrl(url) {
-  if (!url) return url;
-  
-  // Si es URL de Google Drive con /export=download, convertir a streaming
-  if (url.includes('drive.google.com') && url.includes('export=download')) {
-    return url.replace('export=download', 'export=view');
-  }
-  
-  // Si contiene ID de Drive, crear URL de streaming
-  if (url.includes('id=')) {
-    const match = url.match(/id=([a-zA-Z0-9-_]+)/);
-    if (match) {
-      // Usar proxy CORS + Google Drive
-      return `https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?id=${match[1]}&export=download`;
-    }
-  }
-  
-  return url;
-}
 
 function initAudioContext() {
   if (!player.audioContext) {
@@ -570,10 +530,7 @@ async function loadSongsFromGitHub() {
     if (!response.ok) throw new Error('Error loading JSON');
     
     const data = await response.json();
-    player.songs = (data.canciones || []).map(song => ({
-      ...song,
-      url: getStreamableUrl(song.url)
-    }));
+    player.songs = (data.canciones || []);
     player.filteredSongs = [...player.songs];
     
     console.log(`✅ Cargadas ${player.songs.length} canciones`);
@@ -585,7 +542,6 @@ async function loadSongsFromGitHub() {
   } catch (error) {
     console.error('Error:', error);
     document.getElementById('song-title').textContent = 'Error al cargar';
-    document.getElementById('song-artist').textContent = 'Verifica tu conexión';
   }
 }
 
@@ -597,9 +553,7 @@ function createAudio(url) {
   try {
     const source = player.audioContext.createMediaElementAudioSource(audio);
     source.connect(player.compressor);
-  } catch (e) {
-    console.error('Audio source error:', e);
-  }
+  } catch (e) {}
   
   return audio;
 }
@@ -647,7 +601,7 @@ function loadSong(index) {
   player.audio.addEventListener('loadedmetadata', updateDuration);
   player.audio.addEventListener('error', (e) => {
     console.error('Audio error:', e);
-    document.getElementById('song-title').textContent = 'Error cargando audio';
+    document.getElementById('song-title').textContent = 'Error: Canción no disponible';
   });
   
   updateDisplay();
@@ -663,8 +617,7 @@ function updateDisplay() {
   document.getElementById('song-duration').textContent = song.duration ? formatTime(song.duration) : '0:00';
   
   const isFavorite = player.favorites.has(song.url);
-  const btn = document.getElementById('btn-add-favorite');
-  btn.textContent = isFavorite ? '💔 En Favoritos' : '❤️ Agregar a Favoritos';
+  document.getElementById('btn-add-favorite').textContent = isFavorite ? '💔 Agregado' : '❤️ Agregar';
   
   updateQueueList();
 }
@@ -731,7 +684,6 @@ function playSong() {
   if (player.audio) {
     player.audio.play().catch(e => {
       console.error('Play error:', e);
-      alert('No se puede reproducir. Intenta otra canción.');
     });
     player.isPlaying = true;
     document.getElementById('btn-play').textContent = '⏸️';
@@ -772,7 +724,7 @@ function prevSong() {
 
 function loadAndPlay(idx) {
   loadSong(idx);
-  setTimeout(() => playSong(), 100);
+  setTimeout(() => playSong(), 50);
 }
 
 function toggleRepeat() {
@@ -839,7 +791,6 @@ document.getElementById('btn-add-favorite').addEventListener('click', () => {
   if (song) toggleFavorite(song.url);
 });
 
-// Start
 window.addEventListener('load', () => {
   initAudioContext();
   loadSongsFromGitHub();
