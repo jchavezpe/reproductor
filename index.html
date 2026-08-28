@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>🎵 Reproductor Clásico</title>
   <style>
     * {
@@ -402,16 +405,17 @@ const player = {
   playing: false,
   repeat: 0,
   shuffle: false,
-  shuffleOrder: [],
+  shuffleIndices: [],
+  shufflePos: 0,
   favorites: new Set(),
-  showFav: false,
   filtered: []
 };
 
-const JSON_URL = "https://raw.githubusercontent.com/jchavezpe/reproductor/main/canciones.json";
+const JSON_URL = "https://raw.githubusercontent.com/jchavezpe/reproductor/main/canciones.json?t=" + Date.now();
 
 async function init() {
   try {
+    console.log('🔄 Cargando JSON...');
     const res = await fetch(JSON_URL);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
@@ -424,7 +428,7 @@ async function init() {
   } catch (e) {
     console.error('Error:', e);
     document.getElementById('title').textContent = 'Error cargando';
-    document.getElementById('artist').textContent = 'Verifica tu conexión';
+    document.getElementById('artist').textContent = e.message;
   }
 }
 
@@ -452,57 +456,69 @@ function saveFav() {
   localStorage.setItem('fav', JSON.stringify([...player.favorites]));
 }
 
+function generateShuffleOrder() {
+  const songs = player.filtered;
+  player.shuffleIndices = [...Array(songs.length).keys()];
+  for (let i = player.shuffleIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [player.shuffleIndices[i], player.shuffleIndices[j]] = [player.shuffleIndices[j], player.shuffleIndices[i]];
+  }
+  player.shufflePos = 0;
+  console.log(`🔀 Shuffle generado: ${player.shuffleIndices.length} canciones`);
+}
+
 function toggleShuffle() {
   player.shuffle = !player.shuffle;
   document.getElementById('btn-shuffle').classList.toggle('active', player.shuffle);
   
   if (player.shuffle) {
-    // Generar orden aleatorio
-    const songs = player.showFav ? player.filtered : player.songs;
-    player.shuffleOrder = [...Array(songs.length).keys()].sort(() => Math.random() - 0.5);
-    console.log('🔀 Shuffle activado');
+    generateShuffleOrder();
+    console.log('🔀 Shuffle ACTIVADO');
   } else {
-    player.shuffleOrder = [];
-    console.log('🔁 Shuffle desactivado - orden normal');
+    console.log('🔁 Shuffle DESACTIVADO');
   }
 }
 
-function getNextIndex(current) {
-  const songs = player.showFav ? player.filtered : player.songs;
+function getNextIndex() {
+  const songs = player.filtered;
+  if (songs.length === 0) return -1;
   
   if (player.shuffle) {
-    const currentPosInShuffle = player.shuffleOrder.indexOf(current);
-    if (currentPosInShuffle < player.shuffleOrder.length - 1) {
-      return player.shuffleOrder[currentPosInShuffle + 1];
-    } else {
-      return player.repeat === 1 ? player.shuffleOrder[0] : -1;
+    player.shufflePos++;
+    if (player.shufflePos >= player.shuffleIndices.length) {
+      if (player.repeat === 1) {
+        generateShuffleOrder();
+        return player.shuffleIndices[0];
+      }
+      return -1;
     }
+    return player.shuffleIndices[player.shufflePos];
   } else {
-    if (current < songs.length - 1) {
-      return current + 1;
+    if (player.current < songs.length - 1) {
+      return player.current + 1;
     } else {
       return player.repeat === 1 ? 0 : -1;
     }
   }
 }
 
-function getPrevIndex(current) {
-  const songs = player.showFav ? player.filtered : player.songs;
+function getPrevIndex() {
+  const songs = player.filtered;
+  if (songs.length === 0) return -1;
   
   if (player.shuffle) {
-    const currentPosInShuffle = player.shuffleOrder.indexOf(current);
-    if (currentPosInShuffle > 0) {
-      return player.shuffleOrder[currentPosInShuffle - 1];
-    } else {
-      return -1;
+    if (player.shufflePos > 0) {
+      player.shufflePos--;
+      return player.shuffleIndices[player.shufflePos];
     }
+    return -1;
   } else {
-    return Math.max(0, current - 1);
+    return Math.max(0, player.current - 1);
   }
 }
 
 function loadTrack(i) {
-  const songs = player.showFav ? player.filtered : player.songs;
+  const songs = player.filtered;
   if (i < 0 || i >= songs.length) return;
   player.current = i;
   
@@ -521,7 +537,7 @@ function loadTrack(i) {
   }
   
   player.audio.addEventListener('ended', () => {
-    const next = getNextIndex(player.current);
+    const next = getNextIndex();
     if (next >= 0) {
       loadTrack(next);
       play();
@@ -543,7 +559,7 @@ function loadTrack(i) {
 }
 
 function updateDisplay() {
-  const songs = player.showFav ? player.filtered : player.songs;
+  const songs = player.filtered;
   const s = songs[player.current];
   if (!s) return;
   
@@ -558,7 +574,7 @@ function updateDisplay() {
 }
 
 function updateList() {
-  const songs = player.showFav ? player.filtered : player.songs;
+  const songs = player.filtered;
   const html = songs.map((s, i) => `
     <div class="song-item ${i === player.current ? 'playing' : ''}" onclick="loadAndPlay(${i})">
       <div class="song-info">
@@ -639,6 +655,9 @@ function drawViz() {
 }
 
 function loadAndPlay(i) {
+  if (player.shuffle) {
+    player.shufflePos = player.shuffleIndices.indexOf(i);
+  }
   loadTrack(i);
   setTimeout(() => play(), 50);
 }
@@ -650,7 +669,7 @@ document.getElementById('btn-play').addEventListener('click', () => {
 document.getElementById('btn-shuffle').addEventListener('click', toggleShuffle);
 
 document.getElementById('btn-next').addEventListener('click', () => {
-  const next = getNextIndex(player.current);
+  const next = getNextIndex();
   if (next >= 0) {
     loadTrack(next);
     if (player.playing) play();
@@ -661,7 +680,7 @@ document.getElementById('btn-prev').addEventListener('click', () => {
   if (player.audio && player.audio.currentTime > 3) {
     player.audio.currentTime = 0;
   } else {
-    const prev = getPrevIndex(player.current);
+    const prev = getPrevIndex();
     if (prev >= 0) {
       loadTrack(prev);
       if (player.playing) play();
@@ -676,7 +695,7 @@ document.getElementById('btn-repeat').addEventListener('click', () => {
 });
 
 document.getElementById('btn-fav').addEventListener('click', () => {
-  const songs = player.showFav ? player.filtered : player.songs;
+  const songs = player.filtered;
   const s = songs[player.current];
   if (s) toggleFav(s.url);
 });
@@ -698,6 +717,7 @@ document.getElementById('search').addEventListener('input', (e) => {
   );
   player.current = 0;
   player.shuffle = false;
+  player.shuffleIndices = [];
   document.getElementById('btn-shuffle').classList.remove('active');
   updateList();
   if (player.filtered.length > 0) loadTrack(0);
@@ -707,12 +727,6 @@ document.getElementById('progressBar').addEventListener('click', (e) => {
   if (!player.audio) return;
   const pct = e.offsetX / e.currentTarget.offsetWidth;
   player.audio.currentTime = pct * player.audio.duration;
-});
-
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden && player.playing) {
-    console.log('Pantalla bloqueada - audio continúa');
-  }
 });
 
 setInterval(() => {
