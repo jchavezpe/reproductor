@@ -690,7 +690,33 @@ function updateDisplay() {
   const isFav = player.favorites.has(s.url);
   document.getElementById('btn-fav').textContent = isFav ? '💔' : '❤️';
   
+  updateMediaSession(s);
+  
   updateList();
+}
+
+function updateMediaSession(s) {
+  if (!('mediaSession' in navigator)) return;
+  
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: s.title,
+    artist: s.artist,
+    album: 'Clásicos',
+    artwork: [
+      { src: 'https://raw.githubusercontent.com/jchavezpe/reproductor/main/cover.png', sizes: '512x512', type: 'image/png' }
+    ]
+  });
+  
+  navigator.mediaSession.setActionHandler('play', () => play());
+  navigator.mediaSession.setActionHandler('pause', () => pause());
+  navigator.mediaSession.setActionHandler('previoustrack', () => {
+    const prev = getPrevIndex();
+    if (prev >= 0) { loadTrack(prev); play(); }
+  });
+  navigator.mediaSession.setActionHandler('nexttrack', () => {
+    const next = getNextIndex();
+    if (next >= 0) { loadTrack(next); play(); }
+  });
 }
 
 function updateList() {
@@ -758,6 +784,7 @@ function play() {
   player.audio.play().catch(e => console.error('Play error:', e));
   player.playing = true;
   document.getElementById('btn-play').textContent = '⏸️';
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
   drawViz();
 }
 
@@ -765,6 +792,7 @@ function pause() {
   if (player.audio) player.audio.pause();
   player.playing = false;
   document.getElementById('btn-play').textContent = '▶️';
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
 }
 
 function drawViz() {
