@@ -779,15 +779,42 @@ document.getElementById('volume').addEventListener('input', (e) => {
 
 document.getElementById('search').addEventListener('input', (e) => {
   const q = e.target.value.toLowerCase();
+  
+  // Guardar la canción actual antes de filtrar
+  const currentSong = player.filtered[player.current];
+  
+  // Filtrar canciones
   player.filtered = !q ? [...player.songs] : player.songs.filter(s =>
     s.title.toLowerCase().includes(q) || s.artist.toLowerCase().includes(q)
   );
-  player.current = 0;
+  
+  // Buscar si la canción actual sigue en la lista filtrada
+  if (currentSong) {
+    const newIndex = player.filtered.findIndex(s => s.url === currentSong.url);
+    if (newIndex >= 0) {
+      // La canción actual sigue en la lista, mantenerla
+      player.current = newIndex;
+      updateList();
+    } else {
+      // La canción fue filtrada fuera, cargar la primera si hay
+      player.current = 0;
+      updateList();
+      if (player.filtered.length > 0 && !player.playing) {
+        loadTrack(0);
+      }
+    }
+  } else {
+    // No hay canción actual, cargar la primera
+    player.current = 0;
+    updateList();
+    if (player.filtered.length > 0 && !player.playing) {
+      loadTrack(0);
+    }
+  }
+  
   player.shuffle = false;
   player.shuffleIndices = [];
   document.getElementById('btn-shuffle').classList.remove('active');
-  updateList();
-  if (player.filtered.length > 0) loadTrack(0);
 });
 
 document.getElementById('progressBar').addEventListener('click', (e) => {
